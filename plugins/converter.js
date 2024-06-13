@@ -44,7 +44,7 @@ command(
   async (message, match) => {
     if (!message.reply_message || !message.reply_message.text || !match ||isNaN(match)) {
       let text = tiny(
-        "\n𝗙𝗔𝗡𝗖𝗬 𝗧𝗘𝗫𝗧 𝗚𝗘𝗡𝗘𝗥𝗔𝗧𝗢𝗥\n\nReply to a message\nExample: .fancy 32\n\n"
+        "\n𝐅𝐀𝐍𝐂𝐘 𝐓𝐄𝐗𝐓 𝐌𝐄𝐍𝐔\n\nReply to a message\nExample: .fancy 38\n\n"
       );
       listall("NEZUKO").forEach((txt, num) => {
         text += `${(num += 1)} ${txt}\n`;
