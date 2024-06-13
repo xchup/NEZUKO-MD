@@ -145,7 +145,7 @@ command(
     let logo = X.AUDIO_DATA.split(/[;]/)[2];
     let imgbuff = await getBuffer(logo.trim());
     let NaMe = X.AUDIO_DATA.split(/[|,;]/)[0] ? X.AUDIO_DATA.split(/[|,;]/)[0] : X.AUDIO_DATA;
-    const aud = await AddMp3Meta(buff, imgbuff, {title: NaMe, artist: "zeta"});
+    const aud = await AddMp3Meta(buff, imgbuff, {title: NaMe, artist: "zenitsu"});
     return await message.client.sendMessage(message.jid, {
         audio: aud,
         mimetype: 'audio/mpeg',
