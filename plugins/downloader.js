@@ -230,7 +230,7 @@ command({
   'desc': "Repository Downloader",
   'type': "downloader"
 }, async (_0x557b31, _0x2dac4d, _0x357221) => {
-  if (process.cwd() !== "/root/zeta") {
+  if (process.cwd() !== "/root/nezuko") {
     return _0x557b31.reply("use og version");
   }
   if (!isUrl(_0x2dac4d)) {
