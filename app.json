@@ -3,9 +3,9 @@
   "description": "NEZUKO-MD Multi Device whatsapp bot",
   "logo": "https://i.imgur.com/imOAWEN.jpeg",
   "keywords": ["whatsapp"],
-  "repository": "https://github.com/W-i-z-z-k-i-d/NEZUKO-V2",
-  "website": "https://nezukosupport.vercel.app/",
-  "success_url": "https://github.com/W-i-z-z-k-i-d/NEZUKO-V2",
+  "repository": "https://github.com/godzenitsu/NEZUKO-MD-BOT",
+  "website": "https://queen-nezuko-web.onrender.com/",
+  "success_url": "https://github.com/godzenitsu/NEZUKO-MD-BOT",
   "stack": "container",
   "env": {
     "SESSION_ID": {
@@ -19,7 +19,7 @@
      "AUDIO_DATA": {
       "description": "audio data , title;artist;image url",
       "required": "false",
-      "value": "𝐆𝐎𝐃-𝐖𝐈𝐙𝐙𝐊𝐈𝐃;𝐍𝐄𝐙𝐔𝐊𝐎-𝐌𝐃;https://i.imgur.com/o3AEXEj.jpeg"
+      "value": "✡∕ 𝚭𝚵𝚴𝚰𝚻𝐒𝐔 𝐆𝚯𝐃⺀톞🍓;𝐍𝐄𝐙𝐔𝐊𝐎-𝐌𝐃;https://i.imgur.com/o3AEXEj.jpeg"
      },
      "CAPTION": {
       "description": "enter your media caption",
@@ -29,12 +29,12 @@
        "STICKER_DATA": {
       "description": "Sticker pack name, eg : 𝐍𝐄𝐙𝐔𝐊𝐎 𝐌𝐃;𝐆𝐎𝐃 𝐖𝐈𝐙𝐙𝐊𝐈𝐃",
       "required": "false",
-      "value": "𝐍𝐄𝐙𝐔𝐊𝐎;𝐆𝐎𝐃-𝐖𝐈𝐙𝐙𝐊𝐈𝐃💗"
+      "value": "𝐍𝐄𝐙𝐔𝐊𝐎;✡∕ 𝚭𝚵𝚴𝚰𝚻𝐒𝐔 𝐆𝚯𝐃⺀톞🍓"
     },
        "BOT_INFO": {
       "description": "Bot info : botname;ownername;imageurl - image or video",
       "required": "false",
-      "value": "𝐍𝐄𝐙𝐔𝐊𝐎 𝐌𝐃;𝐆𝐎𝐃 𝐖𝐈𝐙𝐙𝐊𝐈𝐃;https://i.imgur.com/imOAWEN.jpeg"
+      "value": "𝐍𝐄𝐙𝐔𝐊𝐎 𝐌𝐃;✡∕ 𝚭𝚵𝚴𝚰𝚻𝐒𝐔 𝐆𝚯𝐃⺀톞🍓;https://i.imgur.com/imOAWEN.jpeg"
     },
      "ALWAYS_ONLINE": {
       "description": "Bot online online : true",
