@@ -10,24 +10,24 @@ command(
     async (message, match, client) => {
         if (!match) return await message.sendMessage("*_Need Facebook Link_*");
 let {data} = await getJson(`https://api.vihangayt.asia/downloader/fb?url=${match}`)
-await message.client.sendMessage(message.jid, { text: `\n╔┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅⚆
-║ 𝐓𝐢𝐭𝐥𝐞 : ${data.title}
-║ 𝐃𝐞𝐬𝐜 : ${data.description}
-║ 𝐔𝐫𝐥 : ${match}
-║
-║ 1.⬢ *Sd quality*
-║ 2.⬢ *Hd quality*
-║
-║ 𝗦𝗲𝗻𝗱 𝗮 𝗻𝘂𝗺𝗯𝗲𝗿 𝗮𝘀 𝗮 𝗿𝗲𝗽𝗹𝘆 𝘁𝗼 𝗱𝗼𝘄𝗻𝗹𝗼𝗮𝗱
-╚┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅⚆\n`, contextInfo: { externalAdReply: {
+await message.client.sendMessage(message.jid, { text: `\n╔━━━━━━━━━━━━━━━┈⊷
+┃ 𝐓𝐢𝐭𝐥𝐞 : ${data.title}
+┃ 𝐃𝐞𝐬𝐜 : ${data.description}
+┃ 𝐔𝐫𝐥 : ${match}
+┃
+┃ 1.⬢ *Sd quality ⏎*
+┃ 2.⬢ *Hd quality ⏎*
+┃
+┃ 𝗦𝗲𝗻𝗱 𝗮 𝗻𝘂𝗺𝗯𝗲𝗿 𝗮𝘀 𝗮 𝗿𝗲𝗽𝗹𝘆 𝘁𝗼 𝗱𝗼𝘄𝗻𝗹𝗼𝗮𝗱
+╚━━━━━━━━━━━━━━━┈⊷\n`, contextInfo: { externalAdReply: {
      title: "𝐍𝐄𝐙𝐔𝐊𝐎 𝐌𝐃 ࿊",
-     body: "",
+     body: "ⓘ ",
      sourceUrl: "",
      mediaUrl: "",
      mediaType: 1,
      showAdAttribution: true,
      renderLargerThumbnail: true,
-     thumbnailUrl: "https://i.imgur.com/Q49D1NN.mp4" }},},{ quoted: message });
+     thumbnailUrl: "https://i.imgur.com/imOAWEN.jpeg" }},},{ quoted: message });
     }
     );
 
