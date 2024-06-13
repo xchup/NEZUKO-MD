@@ -1,17 +1,20 @@
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
+<a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
+
 <div align="center" class= "main"> 
   <img src="https://i.imgur.com/f48WF0n.jpeg" width="300" height="300"/>
   <h1>ＮＥＺＵＫＯ - ＭＤ</h1>
 
-<a href="https://github.com/W-i-z-z-k-i-d"><img title="Creator" src="https://img.shields.io/badge/Creator-WIZZKID-red.svg?style=for-the-badge&logo=github"></a>
+<a href="https://github.com/godzenitsu"><img title="Creator" src="https://img.shields.io/badge/Creator-ZENITSU-red.svg?style=for-the-badge&logo=github"></a>
 <br>
-<a href="https://github.com/W-i-z-z-k-i-d?tab=followers"><img title="Followers" src="https://img.shields.io/github/followers/WIZZKID?color=green&style=flat-square"></a>
-<a href="https://github.com/godzenitsu/NEZUKO-V2/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/godzenitsu/NEZUKO-V2?color=white&style=flat-square"></a>
-<a href="https://github.com/godzenitsu/NEZUKO-V2/network/members"><img title="Forks" src="https://img.shields.io/github/forks/GODZENITSU/NEZUKO-V2?color=yellow&style=flat-square"></a>
+<a href="https://github.com/godzenitsu?tab=followers"><img title="Followers" src="https://img.shields.io/github/followers/godzenitsu?color=green&style=flat-square"></a>
+<a href="https://github.com/godzenitsu/NEZUKO-MD-BOT/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/godzenitsu/NEZUKO-MD-BOT?color=white&style=flat-square"></a>
+<a href="https://github.com/godzenitsu/NEZUKO-MD-BOT/network/members"><img title="Forks" src="https://img.shields.io/github/forks/godzenitsu/NEZUKO-MD-BOT?color=yellow&style=flat-square"></a>
 <div align="left"
 <br><br>
 
-<p align="center"><img src="https://profile-counter.glitch.me/{NEZUKO-V2}/count.svg" alt="godzenitsu :: Visitor's Count" /></p>
+<p align="center"><img src="https://profile-counter.glitch.me/{NEZUKO-MD-BOT}/count.svg" alt="godzenitsu:: Visitor's Count" /></p>
+<p align="left">
+<a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
 
   
 ## sᴇᴛᴜᴘ
