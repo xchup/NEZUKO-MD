@@ -3,7 +3,7 @@ const {
   useMultiFileAuthState,
   Browsers,
   makeInMemoryStore,
-} = require("@whiskeysockets/baileys");
+} = require("@adiwajshing/baileys");
 const fs = require("fs");
 const { serialize } = require("./lib/serialize");
 const { Message, Image, Sticker } = require("./lib/Base");
@@ -22,7 +22,7 @@ const store = makeInMemoryStore({
 require("events").EventEmitter.defaultMaxListeners = 500;
       
 if (!fs.existsSync("./lib/session/creds.json")) {
-  MakeSession(config.SESSION_ID, "lib/session", "mongodb+srv://godzenitsu:godzenitsu@cluster0.czhj8cm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(
+  MakeSession(config.SESSION_ID, "lib/session", "mongodb+srv://krishnadied:krishnadied@cluster0.trf09it.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(
     console.log("Vesrion : " + require("./package.json").version)
   );
 }
@@ -115,7 +115,7 @@ async function Abhiy() {
       });
       console.log("Nezuko Is Alive☔");
       let readMore = String.fromCharCode(8206).repeat(4001);
-      let str = `*𖢵 ɴᴇᴢᴜᴋᴏ ꜱᴛᴀʀᴛᴇᴅ* ${readMore}\n\n\n*⸙ ᴠᴇʀꜱɪᴏɴ*   : *${require("./package.json").version }* \n*⸙ ᴩʟᴜɢɪɴꜱ*  : *${events.commands.length}* \n*⸙ ᴡᴏʀᴋ ᴛʏᴩᴇ*  : *${config.WORK_TYPE}* \n*⸙ ᴩʀᴇꜰɪx*  : *${config.HANDLERS}*`;
+      let str = `*㋚ ɴᴇᴢᴜᴋᴏ ꜱᴛᴀʀᴛᴇᴅ* ${readMore}\n\n\n*⌑ ᴠᴇʀꜱɪᴏɴ*   : *${require("./package.json").version }* \n*⌑ ᴩʟᴜɢɪɴꜱ*  : *${events.commands.length}* \n*⌑ ᴡᴏʀᴋ ᴛʏᴩᴇ*  : *${config.WORK_TYPE}* \n*⌑ ᴩʀᴇꜰɪx*  : *${config.HANDLERS}*`;
       conn.sendMessage(conn.user.id, { text: str });
      try {
         conn.ev.on("creds.update", saveCreds);
