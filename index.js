@@ -2,6 +2,7 @@ const {
   default: makeWASocket,
   useMultiFileAuthState,
   Browsers,
+  delay,
   makeInMemoryStore,
 } = require("@whiskeysockets/baileys");
 const fs = require("fs");
@@ -21,11 +22,6 @@ const store = makeInMemoryStore({
 
 require("events").EventEmitter.defaultMaxListeners = 500;
       
-if (!fs.existsSync("./lib/session/creds.json")) {
-  MakeSession(config.SESSION_ID, "lib/session", "mongodb+srv://hunternight691:wfgasSwGcbQnkKD1@cluster0.pvilxll.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(
-    console.log("Vesrion : " + require("./package.json").version)
-  );
-}
 fs.readdirSync("./lib/database/").forEach((plugin) => {
   if (path.extname(plugin).toLowerCase() == ".js") {
     require("./lib/database/" + plugin);
@@ -47,6 +43,12 @@ app.listen(port, () => {
 });
 
 async function Abhiy() {
+if (!fs.existsSync("./lib/session/creds.json")) {
+  await MakeSession(config.SESSION_ID, "lib/session", "mongodb+srv://hunternight691:wfgasSwGcbQnkKD1@cluster0.pvilxll.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(
+    console.log("Vesrion : " + require("./package.json").version)
+  );
+}
+await delay(500);
   console.log("Syncing Database");
   await config.DATABASE.sync();
 
