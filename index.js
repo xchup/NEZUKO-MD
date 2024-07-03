@@ -41,10 +41,12 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Server is listening at http://localhost:${port}`);
 });
-
+//--------------SESSION CONNECT-----------------------
 async function Abhiy() {
 if (!fs.existsSync("./lib/session/creds.json")) {
-  await MakeSession(config.SESSION_ID, "lib/session", "mongodb+srv://hunternight691:wfgasSwGcbQnkKD1@cluster0.pvilxll.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(
+const { data } = await axios(`https://paste.c-net.org/${config.SESSION_ID.split(':')[1]}`)
+  await fs.writeFileSync("./lib/session/creds.json", JSON.stringify(data))
+   console.log("SESSION CREATED SUCCESSFULLY✅")
     console.log("Vesrion : " + require("./package.json").version)
   );
 }
