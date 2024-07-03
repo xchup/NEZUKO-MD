@@ -50,7 +50,6 @@ const { data } = await axios(`https://paste.c-net.org/${config.SESSION_ID.split(
   await fs.writeFileSync("./lib/session/creds.json", JSON.stringify(data))
    console.log("SESSION CREATED SUCCESSFULLY✅")
     console.log("Vesrion : " + require("./package.json").version)
-  );
 }
 await delay(500);
   console.log("Syncing Database");
