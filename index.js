@@ -28,7 +28,7 @@ async function downloadSessionData() {
     var Zenox = config.SESSION_ID
     var Baabi = Zenox.replace('NeZuKo~', '')
     var Nezuko = File.fromURL(`https://mega.nz/file/${Baabi}`)
-    Meera.download((err, data) => {
+    Nezuko.download((err, data) => {
         if (err) throw err
         fs.writeFile(credsPath, data, () => {
         console.log("Session Saved[🌟]")
