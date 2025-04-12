@@ -12,6 +12,7 @@ const path = require("path");
 const events = require("./lib/event");
 const got = require("got");
 const config = require("./config");
+const credsPath = './lib/session'; // This must be a directory, not a file
 const { File } = require("megajs");
 const { PluginDB } = require("./lib/database/plugins");
 const Greetings = require("./lib/Greetings");
@@ -32,7 +33,11 @@ async function downloadSessionData() {
   const Nezuko = File.fromURL(`https://mega.nz/file/${Baabi}`);
   Nezuko.download((err, data) => {
     if (err) throw err;
-    fs.writeFile(credsPath, data, () => {
+    if (!fs.existsSync(credsPath)) {
+  fs.mkdirSync(credsPath, { recursive: true });
+}
+fs.writeFile(path.join(credsPath, 'creds.json'), data, () => {
+
       console.log("Session Saved [🌟]");
     });
   });
