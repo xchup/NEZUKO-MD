@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/godzenitsu/NEZUKO-MD-BOT.git"
+    "url": "git+https://github.com/godzenitsu/NEZUKO-BOT.git"
   },
   "keywords": [
     "bot",
@@ -22,9 +22,9 @@
   "developer": "ZENITSU",
   "license": "GPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/godzenitsu/NEZUKO-MD-BOT/issues"
+    "url": "https://github.com/godzenitsu/NEZUKO-BOT/issues"
   },
-  "homepage": "https://github.com/godzenitsu/NEZUKO-MD-BOT#readme",
+  "homepage": "https://github.com/godzenitsu/NEZUKO-BOT#readme",
   "dependencies": {
     "@whiskeysockets/baileys": "6.6.0",
     "@adiwajshing/keyed-db": "^0.2.4",
