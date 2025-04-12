@@ -1,7 +1,6 @@
 const {
   default: makeWASocket,
   useMultiFileAuthState,
-  makeInMemoryStore,
   Browsers,
 } = require("@whiskeysockets/baileys");
 const { makeInMemoryStore } = require("@whiskeysockets/baileys/store");
