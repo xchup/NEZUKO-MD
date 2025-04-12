@@ -3,7 +3,7 @@ const {
   useMultiFileAuthState,
   Browsers,
 } = require("@whiskeysockets/baileys");
-const { makeInMemoryStore } = require("@whiskeysockets/baileys/store");
+const { makeInMemoryStore } = require("@whiskeysockets/baileys");
 const fs = require("fs");
 const { serialize } = require("./lib/serialize");
 const { Message, Image, Sticker } = require("./lib/Base");
