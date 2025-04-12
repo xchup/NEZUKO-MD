@@ -11,6 +11,7 @@ const path = require("path");
 const events = require("./lib/event");
 const got = require("got");
 const config = require("./config");
+const { File } = require("megajs");
 const { PluginDB } = require("./lib/database/plugins");
 const Greetings = require("./lib/Greetings");
 const store = makeInMemoryStore({
@@ -24,17 +25,20 @@ async function downloadSessionData() {
         console.error('Please put your session to SESSION_ID env !!');
         process.exit(1)
     }
-    var Ameen = config.SESSION_ID
-    var Miya = Ameen.replace('NeZuKo~', '')
-    var Meera = File.fromURL(`https://mega.nz/file/${Miya}`)
+    var Zenox = config.SESSION_ID
+    var Baabi = Zenox.replace('NeZuKo~', '')
+    var Nezuko = File.fromURL(`https://mega.nz/file/${Baabi}`)
     Meera.download((err, data) => {
         if (err) throw err
         fs.writeFile(credsPath, data, () => {
         console.log("Session Saved[🌟]")
      })})}
-if (!fs.existsSync(credsPath)) {
-    await downloadSessionData()
-      }
+(async () => {
+  if (!fs.existsSync(credsPath)) {
+    await downloadSessionData();
+  }
+})();
+
 }
 fs.readdirSync("./lib/database/").forEach((plugin) => {
   if (path.extname(plugin).toLowerCase() == ".js") {
