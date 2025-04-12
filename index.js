@@ -10,6 +10,7 @@ const pino = require("pino");
 const path = require("path");
 const events = require("./lib/event");
 const got = require("got");
+const credsPath = './lib/session/creds.json';
 const config = require("./config");
 const { File } = require("megajs");
 const { PluginDB } = require("./lib/database/plugins");
