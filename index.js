@@ -2,7 +2,6 @@ const {
   default: makeWASocket,
   useMultiFileAuthState,
   Browsers,
-  delay,
   makeInMemoryStore,
 } = require("@whiskeysockets/baileys");
 const fs = require("fs");
@@ -13,8 +12,6 @@ const path = require("path");
 const events = require("./lib/event");
 const got = require("got");
 const config = require("./config");
-const axios = require('axios');
-const cheerio = require('cheerio');
 const { PluginDB } = require("./lib/database/plugins");
 const Greetings = require("./lib/Greetings");
 const store = makeInMemoryStore({
@@ -23,39 +20,34 @@ const store = makeInMemoryStore({
 
 require("events").EventEmitter.defaultMaxListeners = 500;
       
+async function downloadSessionData() {
+    if (!config.SESSION_ID) {
+        console.error('Please put your session to SESSION_ID env !!');
+        process.exit(1)
+    }
+    var Ameen = config.SESSION_ID
+    var Miya = Ameen.replace('NeZuKo~', '')
+    var Meera = File.fromURL(`https://mega.nz/file/${Miya}`)
+    Meera.download((err, data) => {
+        if (err) throw err
+        fs.writeFile(credsPath, data, () => {
+        console.log("Session Saved[🌟]")
+     })})}
+if (!fs.existsSync(credsPath)) {
+    await downloadSessionData()
+      }
+}
 fs.readdirSync("./lib/database/").forEach((plugin) => {
   if (path.extname(plugin).toLowerCase() == ".js") {
     require("./lib/database/" + plugin);
   }
 });
 
-const express = require('express');
-const app = express();
-const port = 3000;
-
-// Define a route
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
-
-// Start the server
-app.listen(port, () => {
-  console.log(`Server is listening at http://localhost:${port}`);
-});
-//--------------SESSION CONNECT-----------------------
 async function Abhiy() {
-if (!fs.existsSync("./lib/session/creds.json")) {
-const { data } = await axios(`https://paste.c-net.org/${config.SESSION_ID.split(':')[1]}`)
-  await fs.writeFileSync("./lib/session/creds.json", JSON.stringify(data))
-   console.log("SESSION CREATED SUCCESSFULLY✅")
-    console.log("Vesrion : " + require("./package.json").version)
-}
-await delay(500);
   console.log("Syncing Database");
   await config.DATABASE.sync();
 
-  const { state, saveCreds } = await useMultiFileAuthState(
-  "./lib/session" ,
+  
     pino({ level: "silent" })
   );
   let conn = makeWASocket({
@@ -78,7 +70,7 @@ await delay(500);
     const { connection, lastDisconnect } = s;
     if (connection === "connecting") {
       console.log("nezuko");
-      console.log("Verifying Session...");
+      console.log("Connecting to megajs... ♻️");
     }
 
     if (
@@ -93,8 +85,8 @@ await delay(500);
 
     if (connection === "open") {
     
-      console.log("Nezuko Connected To Whatsapp✅");
-      console.log("Loading Plugins🛠️");
+      console.log("Connected to megajs ✅");
+      console.log("Loading plugins ♻️");
 
       let plugins = await PluginDB.findAll();
       plugins.map(async (plugin) => {
@@ -110,16 +102,15 @@ await delay(500);
           }
         }
       });
-      console.log("Plugins Loaded✅");
+      console.log("Plugins loaded ✅");
 
       fs.readdirSync("./plugins").forEach((plugin) => {
         if (path.extname(plugin).toLowerCase() == ".js") {
           require("./plugins/" + plugin);
         }
       });
-      console.log("Nezuko Is Alive☔");
-      let readMore = String.fromCharCode(8206).repeat(4001);
-      let str = `*㋚ ɴᴇᴢᴜᴋᴏ ꜱᴛᴀʀᴛᴇᴅ* ${readMore}\n\n\n*⌑ ᴠᴇʀꜱɪᴏɴ*   : *${require("./package.json").version }* \n*⌑ ᴩʟᴜɢɪɴꜱ*  : *${events.commands.length}* \n*⌑ ᴡᴏʀᴋ ᴛʏᴩᴇ*  : *${config.WORK_TYPE}* \n*⌑ ᴩʀᴇꜰɪx*  : *${config.HANDLERS}*`;
+      console.log("Connected to whatsapp ✅");
+      let str = `𝚀𝚄𝙴𝙴𝙽 𝙽𝙴𝚉𝚄𝙺𝙾 𝚂𝚃𝙰𝚁𝚃𝙴𝙳 \n\n\n𝚅𝙴𝚁𝚂𝙸𝙾𝙽   : *${require("./package.json").version }* \n𝙿𝙻𝚄𝙶𝙸𝙽𝚂  : *${events.commands.length}* \n𝙼𝙾𝙳𝙴  : *${config.WORK_TYPE}* \n𝙷𝙰𝙽𝙳𝙻𝙴𝚁  : *${config.HANDLERS}*`;
       conn.sendMessage(conn.user.id, { text: str });
      try {
         conn.ev.on("creds.update", saveCreds);
