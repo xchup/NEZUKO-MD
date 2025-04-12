@@ -1,6 +1,7 @@
 const {
   default: makeWASocket,
   useMultiFileAuthState,
+  makeInMemoryStore,
   Browsers,
 } = require("@whiskeysockets/baileys");
 const fs = require("fs");
@@ -15,34 +16,37 @@ const config = require("./config");
 const { File } = require("megajs");
 const { PluginDB } = require("./lib/database/plugins");
 const Greetings = require("./lib/Greetings");
+
 const store = makeInMemoryStore({
   logger: pino().child({ level: "silent", stream: "store" }),
 });
 
 require("events").EventEmitter.defaultMaxListeners = 500;
-      
+
 async function downloadSessionData() {
-    if (!config.SESSION_ID) {
-        console.error('Please put your session to SESSION_ID env !!');
-        process.exit(1)
-    }
-    var Zenox = config.SESSION_ID
-    var Baabi = Zenox.replace('NeZuKo~', '')
-    var Nezuko = File.fromURL(`https://mega.nz/file/${Baabi}`)
-    Nezuko.download((err, data) => {
-        if (err) throw err
-        fs.writeFile(credsPath, data, () => {
-        console.log("Session Saved[🌟]")
-     })})}
+  if (!config.SESSION_ID) {
+    console.error("Please put your session to SESSION_ID env !!");
+    process.exit(1);
+  }
+  const Zenox = config.SESSION_ID;
+  const Baabi = Zenox.replace("NeZuKo~", "");
+  const Nezuko = File.fromURL(`https://mega.nz/file/${Baabi}`);
+  Nezuko.download((err, data) => {
+    if (err) throw err;
+    fs.writeFile(credsPath, data, () => {
+      console.log("Session Saved [🌟]");
+    });
+  });
+}
+
 (async () => {
-  if (!fs.existsSync(credsPath)) {
-    await downloadSessionData();
-  }
+  if (!fs.existsSync(credsPath)) {
+    await downloadSessionData();
+  }
 })();
 
-}
 fs.readdirSync("./lib/database/").forEach((plugin) => {
-  if (path.extname(plugin).toLowerCase() == ".js") {
+  if (path.extname(plugin).toLowerCase() === ".js") {
     require("./lib/database/" + plugin);
   }
 });
@@ -51,20 +55,19 @@ async function Abhiy() {
   console.log("Syncing Database");
   await config.DATABASE.sync();
 
-  
-    pino({ level: "silent" })
-  );
+  const { state, saveCreds } = await useMultiFileAuthState(credsPath);
+
   let conn = makeWASocket({
     logger: pino({ level: "silent" }),
     auth: state,
     printQRInTerminal: true,
-
     browser: Browsers.macOS("Desktop"),
     downloadHistory: false,
     syncFullHistory: false,
   });
+
   store.bind(conn.ev);
-  //store.readFromFile("./lib/afiya.json");
+
   setInterval(() => {
     store.writeToFile("./lib/store_db.json");
     console.log("saved store");
@@ -88,7 +91,6 @@ async function Abhiy() {
     }
 
     if (connection === "open") {
-    
       console.log("Connected to megajs ✅");
       console.log("Loading plugins ♻️");
 
@@ -96,8 +98,8 @@ async function Abhiy() {
       plugins.map(async (plugin) => {
         if (!fs.existsSync("./plugins/" + plugin.dataValues.name + ".js")) {
           console.log(plugin.dataValues.name);
-          var response = await got(plugin.dataValues.url);
-          if (response.statusCode == 200) {
+          let response = await got(plugin.dataValues.url);
+          if (response.statusCode === 200) {
             fs.writeFileSync(
               "./plugins/" + plugin.dataValues.name + ".js",
               response.body
@@ -106,29 +108,35 @@ async function Abhiy() {
           }
         }
       });
+
       console.log("Plugins loaded ✅");
 
       fs.readdirSync("./plugins").forEach((plugin) => {
-        if (path.extname(plugin).toLowerCase() == ".js") {
+        if (path.extname(plugin).toLowerCase() === ".js") {
           require("./plugins/" + plugin);
         }
       });
+
       console.log("Connected to whatsapp ✅");
-      let str = `𝚀𝚄𝙴𝙴𝙽 𝙽𝙴𝚉𝚄𝙺𝙾 𝚂𝚃𝙰𝚁𝚃𝙴𝙳 \n\n\n𝚅𝙴𝚁𝚂𝙸𝙾𝙽   : *${require("./package.json").version }* \n𝙿𝙻𝚄𝙶𝙸𝙽𝚂  : *${events.commands.length}* \n𝙼𝙾𝙳𝙴  : *${config.WORK_TYPE}* \n𝙷𝙰𝙽𝙳𝙻𝙴𝚁  : *${config.HANDLERS}*`;
+
+      let str = `𝚀𝚄𝙴𝙴𝙽 𝙽𝙴𝚉𝚄𝙺𝙾 𝚂𝚃𝙰𝚁𝚃𝙴𝙳 \n\n\n𝚅𝙴𝚁𝚂𝙸𝙾𝙽   : *${require("./package.json").version}* \n𝙿𝙻𝚄𝙶𝙸𝙽𝚂  : *${events.commands.length}* \n𝙼𝙾𝙳𝙴  : *${config.WORK_TYPE}* \n𝙷𝙰𝙽𝙳𝙻𝙴𝚁  : *${config.HANDLERS}*`;
       conn.sendMessage(conn.user.id, { text: str });
-     try {
+
+      try {
         conn.ev.on("creds.update", saveCreds);
 
         conn.ev.on("group-participants.update", async (data) => {
           Greetings(data, conn);
         });
+
         conn.ev.on("messages.upsert", async (m) => {
           if (m.type !== "notify") return;
           let ms = m.messages[0];
           let msg = await serialize(JSON.parse(JSON.stringify(ms)), conn);
           if (!msg.message) return;
           let text_msg = msg.body;
-          if (text_msg && config.LOGS)
+
+          if (text_msg && config.LOGS) {
             console.log(
               `At : ${
                 msg.from.endsWith("@g.us")
@@ -136,15 +144,16 @@ async function Abhiy() {
                   : msg.from
               }\nFrom : ${msg.sender}\nMessage:${text_msg}`
             );
+          }
 
           events.commands.map(async (command) => {
             if (
               command.fromMe &&
-              !config.SUDO.split(",").includes(
-                msg.sender.split("@")[0] || !msg.isSelf
-              )
+              !config.SUDO.split(",").includes(msg.sender.split("@")[0]) &&
+              !msg.isSelf
             )
               return;
+
             let comman;
             if (text_msg) {
               comman = text_msg.trim().split(/ +/)[0];
@@ -152,8 +161,10 @@ async function Abhiy() {
                 ? text_msg.split("").shift()
                 : ",";
             }
+
+            let whats;
             if (command.pattern && command.pattern.test(comman)) {
-              var match;
+              let match;
               try {
                 match = text_msg.replace(new RegExp(comman, "i"), "").trim();
               } catch {
@@ -184,14 +195,14 @@ async function Abhiy() {
       }
     }
   });
+
   process.on("uncaughtException", async (err) => {
     let error = err.message;
-       
-   await console.log(err);
- await conn.sendMessage(conn.user.id, { text: error });
-    
+    console.log(err);
+    await conn.sendMessage(conn.user.id, { text: error });
   });
 }
+
 setTimeout(() => {
   Abhiy();
 }, 3000);
