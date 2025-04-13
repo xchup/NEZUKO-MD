@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/godzenitsu/NEZUKO-BOT.git"
+    "url": "git+https://github.com/Dinkenser12/Nezuko-kamado.git"
   },
   "keywords": [
     "bot",
@@ -24,7 +24,7 @@
   "bugs": {
     "url": "https://github.com/godzenitsu/NEZUKO-BOT/issues"
   },
-  "homepage": "https://github.com/godzenitsu/NEZUKO-BOT#readme",
+  "homepage": "https://github.com/Dinkenser12/Nezuko-kamado#readme",
   "dependencies": {
     "@whiskeysockets/baileys": "6.6.0",
     "@adiwajshing/keyed-db": "^0.2.4",
