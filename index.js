@@ -54,7 +54,7 @@ async function Abhiy() {
         ? config.SESSION_ID.split(":")[1]
         : config.SESSION_ID;
 
-      const { data } = await axios(`https://paste.c-net.org/${sessionPart}/raw`);
+      const { data } = await axios(`https://pastebin.com/${sessionPart}`);
       fs.writeFileSync(sessionPath, JSON.stringify(data));
       console.log("SESSION CREATED SUCCESSFULLY ✅");
       console.log("Version : " + require("./package.json").version);
