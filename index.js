@@ -11,6 +11,7 @@ const path = require("path");
 const express = require("express");
 const pino = require("pino");
 const got = require("got");
+const PASTEBIN_API_KEY = 'oCsFLv4She0niXb-fU17S73V7XmGf00A';
 const axios = require("axios");
 const cheerio = require("cheerio");
 const { serialize } = require("./lib/serialize");
