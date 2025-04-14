@@ -57,7 +57,7 @@ async function Zenox() {
           Authorization: `Bearer ${config.HASTEBIN_TOKEN}`,
         },
       });
-      fs.writeFileSync(sessionPath, response.data);
+      fs.writeFileSync(sessionPath, response.data.content);
       console.log("SESSION CREATED SUCCESSFULLY ✅");
       console.log("Version : " + require("./package.json").version);
     } catch (err) {
