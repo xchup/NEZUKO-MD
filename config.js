@@ -6,7 +6,7 @@ if (fs.existsSync("config.env"))
 const toBool = (x) => x == "true";
 
 DATABASE_URL = process.env.DATABASE_URL || "./lib/database.db";
-HASTEBIN_TOKEN: process.env.HASTEBIN_TOKEN || "50fa5f9415fcb28006c6a7eef079b74c08eff00a26daad06be0d34c4e4ca7057a8493d22981a28634ba825c22f2f9188e14d6a446ecfa0d5d0bc371497224f5f
+HASTEBIN_TOKEN = process.env.HASTEBIN_TOKEN || "50fa5f9415fcb28006c6a7eef079b74c08eff00a26daad06be0d34c4e4ca7057a8493d22981a28634ba825c22f2f9188e14d6a446ecfa0d5d0bc371497224f5f
 ",
 
 let HANDLER = "false";
