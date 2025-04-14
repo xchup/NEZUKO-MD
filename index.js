@@ -1,3 +1,4 @@
+require("dotenv").config();
 const {
   default: makeWASocket,
   useMultiFileAuthState,
@@ -10,7 +11,6 @@ const fs = require("fs");
 const path = require("path");
 const express = require("express");
 const pino = require("pino");
-const token = "df017899960c002531139fb346662e5b6618e94a63f626e30c776b08969072810d81863728da6c3116ff2c39047c2be05d9e560aadbcc0c006f1fa74d385e5c4";
 const axios = require("axios");
 const got = require("got");
 const cheerio = require("cheerio");
@@ -23,9 +23,8 @@ const Greetings = require("./lib/Greetings");
 
 require("events").EventEmitter.defaultMaxListeners = 500;
 
-const store = makeInMemoryStore({
-  logger: pino({ level: "silent" }),
-});
+const HASTEBIN_TOKEN = '50fa5f9415fcb28006c6a7eef079b74c08eff00a26daad06be0d34c4e4ca7057a8493d22981a28634ba825c22f2f9188e14d6a446ecfa0d5d0bc371497224f5f';
+const store = makeInMemoryStore({ logger: pino({ level: "silent" }) });
 
 fs.readdirSync("./lib/database/").forEach((plugin) => {
   if (path.extname(plugin).toLowerCase() === ".js") {
@@ -33,28 +32,29 @@ fs.readdirSync("./lib/database/").forEach((plugin) => {
   }
 });
 
-// Express Server
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 app.listen(port, () => {
-  console.log(`Server is listening at http://localhost:${port}`);
+  console.log(`Server running at http://localhost:${port}`);
 });
 
-// ------------------ SESSION CONNECT ----------------------
 async function Zenox() {
   const sessionPath = "./lib/session/creds.json";
+  const sessionKey = config.SESSION_ID.includes(":")
+    ? config.SESSION_ID.split(":")[1]
+    : config.SESSION_ID;
 
   if (!fs.existsSync(sessionPath)) {
     try {
-      const sessionKey = config.SESSION_ID.includes(":")
-        ? config.SESSION_ID.split(":")[1]
-        : config.SESSION_ID;
-
-      const { data } = await axios.get(`https://hastebin.com/raw/${sessionKey}`);
-      fs.writeFileSync(sessionPath, data);
+      const response = await axios.get(`https://hastebin.com/raw/${sessionKey}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      fs.writeFileSync(sessionPath, response.data);
       console.log("SESSION CREATED SUCCESSFULLY ✅");
       console.log("Version : " + require("./package.json").version);
     } catch (err) {
@@ -68,8 +68,7 @@ async function Zenox() {
   await config.DATABASE.sync();
 
   const { state, saveCreds } = await useMultiFileAuthState("./lib/session", pino({ level: "silent" }));
-
-  let conn = makeWASocket({
+  const conn = makeWASocket({
     logger: pino({ level: "silent" }),
     auth: state,
     printQRInTerminal: true,
@@ -79,7 +78,6 @@ async function Zenox() {
   });
 
   store.bind(conn.ev);
-
   setInterval(() => {
     store.writeToFile("./lib/store_db.json");
     console.log("saved store");
@@ -89,8 +87,7 @@ async function Zenox() {
     const { connection, lastDisconnect } = s;
 
     if (connection === "connecting") {
-      console.log("nezuko");
-      console.log("Verifying Session...");
+      console.log("nezuko\nVerifying Session...");
     }
 
     if (connection === "close" && lastDisconnect?.error?.output?.statusCode !== 401) {
@@ -99,8 +96,7 @@ async function Zenox() {
     }
 
     if (connection === "open") {
-      console.log("Nezuko Connected To Whatsapp ✅");
-      console.log("Loading Plugins 🛠️");
+      console.log("Nezuko Connected To Whatsapp ✅\nLoading Plugins 🛠️");
 
       try {
         let plugins = await PluginDB.findAll();
@@ -139,7 +135,6 @@ async function Zenox() {
 
       try {
         conn.ev.on("creds.update", saveCreds);
-
         conn.ev.on("group-participants.update", async (data) => {
           Greetings(data, conn);
         });
@@ -153,11 +148,7 @@ async function Zenox() {
 
           if (text_msg && config.LOGS) {
             console.log(
-              `At : ${
-                msg.from.endsWith("@g.us")
-                  ? (await conn.groupMetadata(msg.from)).subject
-                  : msg.from
-              }\nFrom : ${msg.sender}\nMessage:${text_msg}`
+              `At : ${msg.from.endsWith("@g.us") ? (await conn.groupMetadata(msg.from)).subject : msg.from}\nFrom : ${msg.sender}\nMessage:${text_msg}`
             );
           }
 
@@ -180,16 +171,10 @@ async function Zenox() {
             } else if (text_msg && command.on === "text") {
               const whats = new Message(conn, msg, ms);
               command.function(whats, text_msg, msg, conn, m);
-            } else if (
-              (command.on === "image" || command.on === "photo") &&
-              msg.type === "imageMessage"
-            ) {
+            } else if ((command.on === "image" || command.on === "photo") && msg.type === "imageMessage") {
               const whats = new Image(conn, msg, ms);
               command.function(whats, text_msg, msg, conn, m, ms);
-            } else if (
-              command.on === "sticker" &&
-              msg.type === "stickerMessage"
-            ) {
+            } else if (command.on === "sticker" && msg.type === "stickerMessage") {
               const whats = new Sticker(conn, msg, ms);
               command.function(whats, msg, conn, m, ms);
             }
