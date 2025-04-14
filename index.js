@@ -10,10 +10,9 @@ const fs = require("fs");
 const path = require("path");
 const express = require("express");
 const pino = require("pino");
-const got = require("got");
-const PastebinAPI = require('pastebin-js'),
-pastebin = new PastebinAPI('oCsFLv4She0niXb-fU17S73V7XmGf00A')
+const token = "df017899960c002531139fb346662e5b6618e94a63f626e30c776b08969072810d81863728da6c3116ff2c39047c2be05d9e560aadbcc0c006f1fa74d385e5c4";
 const axios = require("axios");
+const got = require("got");
 const cheerio = require("cheerio");
 const { serialize } = require("./lib/serialize");
 const { Message, Image, Sticker } = require("./lib/Base");
@@ -29,12 +28,12 @@ const store = makeInMemoryStore({
 });
 
 fs.readdirSync("./lib/database/").forEach((plugin) => {
-  if (path.extname(plugin).toLowerCase() == ".js") {
+  if (path.extname(plugin).toLowerCase() === ".js") {
     require("./lib/database/" + plugin);
   }
 });
 
-// Set up Express server
+// Express Server
 const app = express();
 const port = 3000;
 app.get("/", (req, res) => {
@@ -45,21 +44,21 @@ app.listen(port, () => {
 });
 
 // ------------------ SESSION CONNECT ----------------------
-async function Abhiy() {
+async function Zenox() {
   const sessionPath = "./lib/session/creds.json";
 
   if (!fs.existsSync(sessionPath)) {
     try {
-      const sessionPart = config.SESSION_ID.includes(":")
+      const sessionKey = config.SESSION_ID.includes(":")
         ? config.SESSION_ID.split(":")[1]
         : config.SESSION_ID;
 
-      const { data } = await axios(`https://pastebin.com/${sessionPart}`);
-      fs.writeFileSync(sessionPath, JSON.stringify(data));
+      const { data } = await axios.get(`https://hastebin.com/raw/${sessionKey}`);
+      fs.writeFileSync(sessionPath, data);
       console.log("SESSION CREATED SUCCESSFULLY ✅");
       console.log("Version : " + require("./package.json").version);
     } catch (err) {
-      console.error("Failed to fetch session:", err.message);
+      console.error("Failed to fetch session from Hastebin:", err.message);
       return;
     }
   }
@@ -96,7 +95,7 @@ async function Abhiy() {
 
     if (connection === "close" && lastDisconnect?.error?.output?.statusCode !== 401) {
       console.log(lastDisconnect.error.output.payload);
-      Abhiy();
+      Zenox();
     }
 
     if (connection === "open") {
@@ -211,5 +210,5 @@ async function Abhiy() {
 }
 
 setTimeout(() => {
-  Abhiy();
+  Zenox();
 }, 3000);
