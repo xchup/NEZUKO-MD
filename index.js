@@ -46,8 +46,8 @@ app.listen(port, () => {
 
 async function Zenox() {
   const sessionPath = "./lib/session/creds.json";
-  const sessionKey = config.SESSION_ID.includes(":")
-    ? config.SESSION_ID.split(":")[1]
+  const sessionKey = config.SESSION_ID.includes("-")
+    ? config.SESSION_ID.split("-")[1]
     : config.SESSION_ID;
 
   if (!fs.existsSync(sessionPath)) {
