@@ -23,7 +23,6 @@ const Greetings = require("./lib/Greetings");
 
 require("events").EventEmitter.defaultMaxListeners = 500;
 
-const HASTEBIN_TOKEN = '50fa5f9415fcb28006c6a7eef079b74c08eff00a26daad06be0d34c4e4ca7057a8493d22981a28634ba825c22f2f9188e14d6a446ecfa0d5d0bc371497224f5f';
 const store = makeInMemoryStore({ logger: pino({ level: "silent" }) });
 
 fs.readdirSync("./lib/database/").forEach((plugin) => {
@@ -34,9 +33,13 @@ fs.readdirSync("./lib/database/").forEach((plugin) => {
 
 const app = express();
 const port = process.env.PORT || 3000;
+const { HASTEBIN_TOKEN } = require("./config");
+
+
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
@@ -51,7 +54,7 @@ async function Zenox() {
     try {
       const response = await axios.get(`https://hastebin.com/raw/${sessionKey}`, {
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${config.HASTEBIN_TOKEN}`,
         },
       });
       fs.writeFileSync(sessionPath, response.data);
