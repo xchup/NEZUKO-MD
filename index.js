@@ -33,7 +33,7 @@ fs.readdirSync("./lib/database/").forEach((plugin) => {
 
 const app = express();
 const port = process.env.PORT || 3000;
-const { HASTEBIN_TOKEN } = require("./config");
+const { token } = require("./config");
 
 
 app.get("/", (req, res) => {
