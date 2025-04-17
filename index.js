@@ -54,7 +54,7 @@ async function Zenox() {
     try {
       const response = await axios.get(`https://hastebin.com/raw/${sessionKey}`, {
         headers: {
-          Authorization: `Bearer ${config.HASTEBIN_TOKEN}`,
+          Authorization: `Bearer ${config.token}`,
         },
       });
       fs.writeFileSync(sessionPath, response.data.content);
