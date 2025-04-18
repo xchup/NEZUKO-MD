@@ -46,18 +46,17 @@ app.listen(port, () => {
 
 async function Zenox() {
   const sessionPath = "./lib/session/creds.json";
-  const sessionKey = config.SESSION_ID.includes("-")
-    ? config.SESSION_ID.split("-")[1]
-    : config.SESSION_ID;
 
   if (!fs.existsSync(sessionPath)) {
     try {
-      const response = await axios.get(`https://hastebin.com/raw/${sessionKey}`, {
+      const url = `https://hastebin.com/raw/${config.SESSION_ID.split('~')[1]}`;
+      const token = '50fa5f9415fcb28006c6a7eef079b74c08eff00a26daad06be0d34c4e4ca7057a8493d22981a28634ba825c22f2f9188e14d6a446ecfa0d5d0bc371497224f5f';
+      let res = await axios.get(url, {
         headers: {
-          Authorization: `Bearer ${config.token}`,
-        },
-      });
-      fs.writeFileSync(sessionPath, response.data.content);
+          'Authorization': `Bearer ${token}`
+        }
+      })
+      fs.writeFileSync("./lib/session/creds.json", res.data.content);
       console.log("SESSION CREATED SUCCESSFULLY ✅");
       console.log("Version : " + require("./package.json").version);
     } catch (err) {
@@ -94,7 +93,7 @@ async function Zenox() {
     }
 
     if (connection === "close" && lastDisconnect?.error?.output?.statusCode !== 401) {
-      console.log(lastDisconnect.error.output.payload);
+      console.log(lastDisconnect.error.output);
       Zenox();
     }
 

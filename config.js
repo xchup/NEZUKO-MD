@@ -6,15 +6,12 @@ if (fs.existsSync("config.env"))
 const toBool = (x) => x == "true";
 
 DATABASE_URL = process.env.DATABASE_URL || "./lib/database.db";
-token = process.env.token || "50fa5f9415fcb28006c6a7eef079b74c08eff00a26daad06be0d34c4e4ca7057a8493d22981a28634ba825c22f2f9188e14d6a446ecfa0d5d0bc371497224f5f
-",
 
-let HANDLER = "false";
 module.exports = {
   ANTILINK: toBool(process.env.ANTI_LINK) || false,
   LOGS: toBool(process.env.LOGS) || true,
   ANTILINK_ACTION: process.env.ANTI_LINK || "kick",
-  SESSION_ID:process.env.SESSION_ID || " ",
+  SESSION_ID:process.env.SESSION_ID || "",
   LANG: process.env.LANG || "EN",
   HANDLERS: process.env.PREFIX || '^[.]',
   BRANCH: "main",
@@ -45,6 +42,6 @@ module.exports = {
         }),
   HEROKU_APP_NAME: process.env.HEROKU_APP_NAME || " ",
   HEROKU_API_KEY: process.env.HEROKU_API_KEY || " ",
-  SUDO: process.env.SUDO || "0",
+  SUDO: process.env.SUDO || "917012984396",
   IMGBB_KEY: ["76a050f031972d9f27e329d767dd988f", "deb80cd12ababea1c9b9a8ad6ce3fab2", "78c84c62b32a88e86daf87dd509a657a"],
 };
