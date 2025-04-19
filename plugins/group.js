@@ -20,11 +20,6 @@ command(
   }
 );
 
-/* Copyright (C) 2024 Louis-X0.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-Louis-X0 - Zeta-X0
-*/
 
 command(
   {
@@ -45,11 +40,7 @@ command(
   }
 );
 
-/* Copyright (C) 2024 Louis-X0.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-Louis-X0 - Zeta-X0
-*/
+
 
 command(
   {
@@ -69,11 +60,6 @@ command(
   }
 );
 
-/* Copyright (C) 2024 Louis-X0.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-Louis-X0 - Zeta-X0
-*/
 
 command(
   {
@@ -93,11 +79,7 @@ command(
   }
 );
 
-/* Copyright (C) 2024 Louis-X0.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-Louis-X0 - Zeta-X0
-*/
+
 
 command(
   {
@@ -116,11 +98,6 @@ command(
   }
 );
 
-/* Copyright (C) 2024 Louis-X0.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-Louis-X0 - Zeta-X0
-*/
 
 command(
   {
@@ -139,11 +116,7 @@ command(
   }
 );
 
-/* Copyright (C) 2024 Louis-X0.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-Louis-X0 - Zeta-X0
-*/
+
 
 command(
   {
@@ -166,11 +139,7 @@ command(
   }
 );
 
-/* Copyright (C) 2024 Louis-X0.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-Louis-X0 - Zeta-X0
-*/
+
 
 
 command(
@@ -193,11 +162,7 @@ command(
   }
 );
 
-/* Copyright (C) 2024 Louis-X0.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-Louis-X0 - Zeta-X0
-*/
+
 
 
 command(
@@ -218,11 +183,7 @@ command(
   }
 );
 
-/* Copyright (C) 2024 Louis-X0.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-Louis-X0 - Zeta-X0
-*/
+
 
 command(
   {
@@ -254,11 +215,6 @@ command(
   }
 );
 
-/* Copyright (C) 2024 Louis-X0.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-Louis-X0 - Zeta-X0
-*/
 
 command(
   {
@@ -276,11 +232,7 @@ command(
   }
 );
 
-/* Copyright (C) 2024 Louis-X0.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-Louis-X0 - Zeta-X0
-*/
+
 
 command(
   {
@@ -298,11 +250,7 @@ command(
   }
 );
 
-/* Copyright (C) 2024 Louis-X0.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-Louis-X0 - Zeta-X0
-*/
+
 
 command(
   {
@@ -320,11 +268,6 @@ command(
   }
 );
 
-/* Copyright (C) 2024 Louis-X0.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-Louis-X0 - Zeta-X0
-*/
 
 command(
   {
@@ -356,11 +299,6 @@ command(
   }
 );
 
-/* Copyright (C) 2024 Louis-X0.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-Louis-X0 - Zeta-X0
-*/
 
 command(
   {
@@ -379,11 +317,7 @@ command(
 );
   
 
-/* Copyright (C) 2024 Louis-X0.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-Louis-X0 - Zeta-X0
-*/
+
 
 command(
   {
@@ -403,11 +337,6 @@ command(
   }
 );
 
-/* Copyright (C) 2024 Louis-X0.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-Louis-X0 - Zeta-X0
-*/
 
 command(
   {
@@ -427,11 +356,6 @@ command(
   }
 );
 
-/* Copyright (C) 2024 Louis-X0.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-Louis-X0 - Zeta-X0
-*/
 
 command(
   {
