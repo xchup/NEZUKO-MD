@@ -364,7 +364,7 @@ command(
     var mesaj = "";
     var plugins = await PluginDB.findAll();
     if (plugins.length < 1) {
-      return await message.sendMessage("*_Ohh Baby,No external plugins installed_*");
+      return await message.sendMessage("*_No external plugins installed_*");
     } else {
       plugins.map((plugin) => {
         mesaj +=
