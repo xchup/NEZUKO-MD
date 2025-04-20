@@ -13,7 +13,7 @@ module.exports = {
   ANTILINK_ACTION: process.env.ANTI_LINK || "kick",
   SESSION_ID:process.env.SESSION_ID || "",
   LANG: process.env.LANG || "EN",
-  HANDLERS: process.env.PREFIX || '^',
+  HANDLERS: process.env.PREFIX || '^[.]',
   BRANCH: "main",
   WARN_COUNT: 3,
   STICKER_DATA: process.env.STICKER_DATA || "𝙺𝙰𝙼𝙰𝙳𝙾 𝙽𝙴𝚉𝚄𝙺𝙾;𝚉𝙴𝙽𝙾𝚇 𝙶𝙾𝙳",
