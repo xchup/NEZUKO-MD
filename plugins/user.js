@@ -356,7 +356,7 @@ command(
 
 command(
   { 
-      pattern: "plugin list", 
+      pattern: "pluglist", 
       fromMe: true, 
       desc: "plugin list",
       type:'user'},
