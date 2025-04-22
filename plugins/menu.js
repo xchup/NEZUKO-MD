@@ -48,7 +48,7 @@ Description: ${i.desc}\`\`\``);
         .split(",");
         let usern = message.pushName
         const readMore = String.fromCharCode(8206).repeat(4001);
-      let menu = `\n〔 ${BOT_INFO.split(";")[0]} 〕
+      let menu = `\n╭───〔 ${BOT_INFO.split(";")[0]} 〕──┈⊷
   ╭────────────────⊷   
   ┃✯│ 𝙾𝚆𝙽𝙴𝚁: ${BOT_INFO.split(";")[1]}
   ┃✯│ 𝚄𝚂𝙴𝚁: ${usern}
