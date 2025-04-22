@@ -211,7 +211,7 @@ Description: ${i.desc}\`\`\``);
   ┃✯│ 𝙷𝙰𝙽𝙳𝙻𝙴𝚁: ${config.HANDLERS}
   ┃✯│ 𝚅𝙴𝚁𝚂𝙸𝙾𝙽: ${require("../package.json").version}
   ╰─────────────────⊷  
-‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎‎ ❐ 𝙿𝙻𝚄𝙶𝙸𝙽𝚂 ❒`;
+‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎‎ ⎙‎ 𝙿𝙻𝚄𝙶𝙸𝙽𝚂 ⎙‎ `;
 
       let cmnd = [];
       let cmd;
@@ -232,31 +232,43 @@ Description: ${i.desc}\`\`\``);
       cmnd.sort();
       category.sort().forEach((cmmd) => {
         menu += `\n   ╭─────────────┈⊷`;
-        menu += `\n   │  *${cmmd.toUpperCase()}* ⏎`;
+        menu += `\n   │ꀆ  *${cmmd.toUpperCase()}* ꀆ`;
         menu += `\n   ╰─────────────┈⊷`
         menu += `\n  ╭─────────────┈⊷`;
         let comad = cmnd.filter(({ type }) => type == cmmd);
         comad.forEach(({ cmd }) => {
-          menu += `\n  ││◦➛   ${cmd.trim()}`;
+          menu += `\n  ││   ${cmd.trim()}`;
         });
         menu += `\n  ╰─────────────┈⊷`;
       });
-menu += `\n╰─────────────┈⊷`;
+menu += `\n© 𝚀𝚄𝙴𝙴𝙽-𝙽𝙴𝚉𝚄𝙺𝙾`;
       let penu = tiny(menu)
-      let vd = BOT_INFO.split(";")[2];
-      return await message.sendFromUrl(vd, {fileLength: "500000000", gifPlayback: true, contextInfo: {
-      mentionedJid: [m.sender],
-      forwardingScore: 999,
-      isForwarded: false,
-      forwardedNewsletterMessageInfo: {
-      newsletterJid: '120363239634100086@newsletter',
-      newsletterName: "",
-      serverMessageId: -1
-            }}, caption: (penu)}, {quoted: message })
+
+        // Download thumbnail as buffer
+        let thumbnailBuffer = await axios
+          .get("https://jerryapi.vercel.app/Fs97Yu.jpg", {
+            responseType: "arraybuffer",
+          })
+          .then((res) => res.data)
+          .catch(() => null);
+
+        return await message.client.sendMessage(message.jid, {
+          text: penu,
+          contextInfo: {
+            externalAdReply: {
+              title: "𝚀𝚄𝙴𝙴𝙽-𝙽𝙴𝚉𝚄𝙺𝙾",
+              body: "⬇️ 𝙼𝙰𝙸𝙽 𝙼𝙴𝙽𝚄",
+              mediaType: 1,
+              renderLargerThumbnail: false,
+              showAdAttribution: true,
+              thumbnail: thumbnailBuffer,
+            },
+          },
+        });
+      }
+    } catch (e) {
+      message.reply(e.toString());
     }
-}catch(e){
-message.reply(e)
-}
   }
 );
 
