@@ -17,7 +17,7 @@ module.exports = {
   BRANCH: "main",
   WARN_COUNT: 3,
   STICKER_DATA: process.env.STICKER_DATA || "𝙺𝙰𝙼𝙰𝙳𝙾 𝙽𝙴𝚉𝚄𝙺𝙾;𝚉𝙴𝙽𝙾𝚇 𝙶𝙾𝙳",
-  BOT_INFO: process.env.BOT_INFO || "𝙽𝙴𝚉𝚄𝙺𝙾;𝚉𝙴𝙽𝙾𝚇;https://files.catbox.moe/spmaxi.png",
+  BOT_INFO: process.env.BOT_INFO || "𝙽𝙴𝚉𝚄𝙺𝙾;𝚉𝙴𝙽𝙾𝚇;https://files.catbox.moe/spmaxi.png", // This url cannot change the menu image.
   AUDIO_DATA: process.env.AUDIO_DATA || "𝙶𝙾𝙳-𝚉𝙴𝙽𝙾𝚇;𝙽𝙴𝚉𝚄𝙺𝙾;https://files.catbox.moe/spmaxi.png",
   ALWAYS_ONLINE: process.env.ALWAYS_ONLINE || "false",
   CAPTION: process.env.CAPTION || "𝐍𝐄𝐙𝐔𝐊𝐎🦋",
