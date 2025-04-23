@@ -43,8 +43,8 @@ command(
     await message.client.sendMessage(message.jid, {
       video: { url: "https://jerryapi.vercel.app/GUPvAd.jpg" },
       caption: caption,
-      gifPlayback: true,
-      mimetype: "video/mp4"
+      gifPlayback: false,
+      mimetype: "image/jpeg"
     }, { quoted: message });
   }
 );
