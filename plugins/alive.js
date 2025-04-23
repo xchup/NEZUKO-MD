@@ -41,11 +41,9 @@ command(
 
     // Then send the video
     await message.client.sendMessage(message.jid, {
-      video: { url: "https://jerryapi.vercel.app/GUPvAd.jpg" },
-      caption: caption,
-      gifPlayback: false,
-      mimetype: "image/jpeg"
-    }, { quoted: message });
+  image: { url: "https://jerryapi.vercel.app/GUPvAd.jpg" },
+  caption: caption
+}, { quoted: message });
   }
 );
 // credits to oggy @mksir12
