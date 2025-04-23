@@ -16,7 +16,7 @@ const { PluginDB, installPlugin } = require("../lib/database/plugins");
 
 command(
   {
-    pattern: "omenu",
+    pattern: "menu",
     fromMe: isPrivate,
     desc: "Show All Commands",
     dontAddCommandList: true,
