@@ -47,10 +47,27 @@ command(
     const end = new Date().getTime();
     const speed = end - start;
 
-    await new Promise(t => setTimeout(t, 0));
-    await message.reply(`*𝙻𝙰𝚃𝙴𝙽𝙲𝚈!* 📡\n${speed} *𝙼𝚂*`);
+    const contentText = `*𝙻𝙰𝚃𝙴𝙽𝙲𝚈!* 📡\n${speed} *𝙼𝚂*`;
+
+    // Reply to user with verified style
+    return await message.client.sendMessage(message.jid, {
+      text: contentText,
+      contextInfo: {
+        mentionedJid: [message.sender],
+        externalAdReply: {
+          title: "QUEEN-NEZUKO",
+          body: "⬇️ 𝙿𝙸𝙽𝙶 𝚁𝙴𝚂𝚄𝙻𝚃",
+          mediaType: 1,
+          showAdAttribution: true,
+          renderLargerThumbnail: false,
+          thumbnailUrl: "https://jerryapi.vercel.app/Fs97Yu.jpg",
+          sourceUrl: "https://github.com/Dinkenser12/Nezuko-kamado"
+        }
+      }
+    }, { quoted: message }); // <== This makes it a REPLY
   }
 );
+
 /* Copyright (C) 2022 X-Electra.
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
