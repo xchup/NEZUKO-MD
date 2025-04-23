@@ -29,13 +29,13 @@ command(
     },
     async (message, match, client) => {
         const start = new Date().getTime();
-      let { key } = await message.sendMessage(`*❬ ᴛᴇꜱᴛɪɴɢ ʟᴀᴛᴇɴᴄʏ ❭*`);
+      let { key } = await message.sendMessage(`*❬ 𝙲𝙷𝙴𝙲𝙺𝙸𝙽𝙶 𝙻𝙰𝚃𝙴𝙽𝙲𝚈 ❭*`);
         const end = new Date().getTime();
 var speed = end - start;
  
 await new Promise(t => setTimeout(t,0))
-         await message.client.sendMessage(message.jid,{text:`*ʟᴀᴛᴇɴᴄʏ!* 📡
-${speed} *ᴍꜱ*` , edit: key});
+         await message.client.sendMessage(message.jid,{text:`*𝙻𝙰𝚃𝙴𝙽𝙲𝚈!* 📡
+${speed} *𝙼𝚂*` , edit: key});
 })
 
 /* Copyright (C) 2022 X-Electra.
@@ -111,7 +111,7 @@ command(
       });
     } else {
       await message.block(message.jid);
-      return await message.reply("_Enemy blocked_");
+      return await message.reply("_User blocked_");
     }
   }
 );
