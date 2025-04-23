@@ -5,7 +5,9 @@ const {
     clockString,
     getUrl,
     parsedJid,
+    runtime,
     isAdmin
+    
 } = require("../lib");
 const {
     BOT_INFO
@@ -18,21 +20,36 @@ const fs = require("fs");
 const { PluginDB, installPlugin } = require("../lib/database/plugins");
 
 command(
-    {
-        pattern: "ping2",
-        fromMe: isPrivate,
-        desc: "To check ping",
-        type: "user",
-    },
-    async (message, match, client) => {
-        const start = new Date().getTime();
-        await message.sendMessage(`*❬ 𝙲𝙷𝙴𝙲𝙺𝙸𝙽𝙶 𝙻𝙰𝚃𝙴𝙽𝙲𝚈 ❭*`);
-        const end = new Date().getTime();
-        const speed = end - start;
-
-        await new Promise(t => setTimeout(t, 0));
-        await message.reply(`*𝙻𝙰𝚃𝙴𝙽𝙲𝚈!* 📡\n${speed} *𝙼𝚂*`);
+  {
+    pattern: "ping",
+    fromMe: isPrivate,
+    desc: "To check ping",
+    type: "user",
+  },
+  async (message, match, client) => {
+    // React with 📡 emoji
+    if (typeof message.react === "function") {
+      await message.react("📡");
+    } else if (typeof message.sendReaction === "function") {
+      await message.sendReaction("📡");
+    } else {
+      try {
+        await message.client.sendMessage(message.chat || message.jid, {
+          react: { text: "📡", key: message.key }
+        });
+      } catch (e) {
+        console.error("Failed to send reaction:", e.message);
+      }
     }
+
+    const start = new Date().getTime();
+    await message.sendMessage(`*❬ 𝙲𝙷𝙴𝙲𝙺𝙸𝙽𝙶 𝙻𝙰𝚃𝙴𝙽𝙲𝚈 ❭*`);
+    const end = new Date().getTime();
+    const speed = end - start;
+
+    await new Promise(t => setTimeout(t, 0));
+    await message.reply(`*𝙻𝙰𝚃𝙴𝙽𝙲𝚈!* 📡\n${speed} *𝙼𝚂*`);
+  }
 );
 /* Copyright (C) 2022 X-Electra.
 Licensed under the  GPL-3.0 License;
