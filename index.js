@@ -57,7 +57,7 @@ async function Zenox() {
         }
       })
       fs.writeFileSync("./lib/session/creds.json", res.data.content);
-      console.log("SESSION CREATED SUCCESSFULLY ✅");
+      console.log("Session stored ✅");
       console.log("Version : " + require("./package.json").version);
     } catch (err) {
       console.error("Failed to fetch session from Hastebin:", err.message);
@@ -129,7 +129,7 @@ async function Zenox() {
       console.log("Plugins Loaded ✅");
 
       const readMore = String.fromCharCode(8206).repeat(4001);
-      const str = `*㋚ ɴᴇᴢᴜᴋᴏ ꜱᴛᴀʀᴛᴇᴅ* ${readMore}\n\n\n*⌑ ᴠᴇʀꜱɪᴏɴ*   : *${require("./package.json").version}* \n*⌑ ᴩʟᴜɢɪɴꜱ*  : *${events.commands.length}* \n*⌑ ᴡᴏʀᴋ ᴛʏᴩᴇ*  : *${config.WORK_TYPE}* \n*⌑ ᴩʀᴇꜰɪx*  : *${config.HANDLERS}*`;
+      const str = `*ꋊ 𝙽𝙴𝚉𝚄𝙺𝙾 𝚂𝚃𝙰𝚁𝚃𝙴𝙳* ${readMore}\n\n\n*𝚅𝙴𝚁𝚂𝙸𝙾𝙽*   : *${require("./package.json").version}* \n*𝙿𝙻𝚄𝙶𝙸𝙽𝚂*  : *${events.commands.length}* \n*𝙼𝙾𝙳𝙴*  : *${config.WORK_TYPE}* \n*𝙷𝙰𝙽𝙳𝙻𝙴𝚁*  : *${config.HANDLERS}*`;
 
       if (conn.user?.id) {
         conn.sendMessage(conn.user.id, { text: str });
