@@ -1,21 +1,16 @@
 const plugins = require("../lib/event");
 const {
-    command,
-    isPrivate,
-    clockString,
-    getUrl,
-    parsedJid,
-    isAdmin
-    
+  command,
+  isPrivate,
+  clockString,
+  getUrl,
+  parsedJid,
+  isAdmin
 } = require("../lib");
-const {
-    BOT_INFO
-} = require("../config");
+const { BOT_INFO } = require("../config");
 const config = require("../config");
 const axios = require("axios");
 const { tiny } = require("../lib/fancy_font/fancy");
-const Jimp = require("jimp");
-const got = require("got");
 const fs = require("fs");
 const { PluginDB, installPlugin } = require("../lib/database/plugins");
 
@@ -29,7 +24,6 @@ command(
   },
   async (message, match, m, client) => {
     try {
-      // Add react emoji 📄
       const react = async (msg, emoji) => {
         if (typeof msg.react === "function") {
           await msg.react(emoji);
@@ -89,12 +83,11 @@ Description: ${i.desc}\`\`\``);
 
           if (!command.dontAddCommandList && cmd !== undefined) {
             let type = command.type ? command.type.toLowerCase() : "misc";
-
             cmnd.push({ cmd, type });
-
             if (!category.includes(type)) category.push(type);
           }
         });
+
         cmnd.sort();
         category.sort().forEach((cmmd) => {
           menu += `\n   ╭─────────────┈⊷`;
@@ -107,6 +100,7 @@ Description: ${i.desc}\`\`\``);
           });
           menu += `\n  ╰─────────────┈⊷`;
         });
+
         menu += `\n© 𝚀𝚄𝙴𝙴𝙽-𝙽𝙴𝚉𝚄𝙺𝙾`;
         let penu = tiny(menu);
 
@@ -117,19 +111,23 @@ Description: ${i.desc}\`\`\``);
           .then((res) => res.data)
           .catch(() => null);
 
-        return await message.client.sendMessage(message.jid, {
-          text: penu,
-          contextInfo: {
-            externalAdReply: {
-              title: "𝚀𝚄𝙴𝙴𝙽-𝙽𝙴𝚉𝚄𝙺𝙾",
-              body: "⬇️ 𝙼𝙰𝙸𝙽 𝙼𝙴𝙽𝚄",
-              mediaType: 1,
-              renderLargerThumbnail: false,
-              showAdAttribution: true,
-              thumbnail: thumbnailBuffer,
+        return await message.client.sendMessage(
+          message.jid,
+          {
+            text: penu,
+            contextInfo: {
+              externalAdReply: {
+                title: "𝚀𝚄𝙴𝙴𝙽-𝙽𝙴𝚉𝚄𝙺𝙾",
+                body: "⬇️ 𝙼𝙰𝙸𝙽 𝙼𝙴𝙽𝚄",
+                mediaType: 1,
+                renderLargerThumbnail: false,
+                showAdAttribution: true,
+                thumbnail: thumbnailBuffer,
+              },
             },
           },
-        });
+          { quoted: message }
+        );
       }
     } catch (e) {
       message.reply(e.toString());
