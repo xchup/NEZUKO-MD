@@ -1,5 +1,6 @@
 const { command, isPrivate } = require("../lib");
 const axios = require("axios");
+const searchCache = {};
 
 // Custom react function
 const react = async (msg, emoji) => {
