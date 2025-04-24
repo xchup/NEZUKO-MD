@@ -2,18 +2,20 @@ const axios = require("axios");
 const fs = require("fs");
 const os = require("os");
 const path = require("path");
-const { command, isPrivate, blackVideo } = require("../lib");
-const GITHUB_TOKEN = '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';
-const GITHUB_USERNAME = 'mksir12';
-const GITHUB_REPO = 'jerryapii';
-const GITHUB_BRANCH = 'main';
-const VERCEL_DOMAIN = 'https://jerryapi.vercel.app';
+const FormData = require("form-data");
+const { command, isPrivate } = require("../lib");
 
+const IMAGEKIT_URL = "https://upload.imagekit.io/api/v1/files/upload";
+const IMAGEKIT_PUBLIC_KEY = "public_od3PDIqh33GZ8sAOj/aDakRA6zo=";
+const IMAGEKIT_PRIVATE_KEY = "private_VGQugh1MUamsvYrf6IOcLRTgeQ4=";
+
+// Function to create random ID for file names
 function makeid(length = 6) {
   const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   return Array.from({ length }, () => chars[Math.floor(Math.random() * chars.length)]).join('');
 }
 
+// Function to react to the message
 async function react(message, emoji) {
   if (message.key && message.client?.sendMessage) {
     await message.client.sendMessage(message.jid, {
@@ -25,10 +27,17 @@ async function react(message, emoji) {
   }
 }
 
+// Function to remove background from video
+async function blackVideo(buffer) {
+  // Implement your video background removal logic here
+  // For now, assuming it returns the modified video buffer (you may replace with actual logic)
+  return buffer; // Placeholder: return the same buffer as it is
+}
+
 command({
   pattern: "url",
   fromMe: isPrivate,
-  desc: "📤 Upload media to GitHub + Vercel (image, video, gif, or audio)",
+  desc: "📤 Upload media to ImageKit (image, video, gif, or audio)",
   type: "tool"
 }, async (message, match, m) => {
   const quoted = message.reply_message;
@@ -69,29 +78,27 @@ command({
       return message.reply("⚠️ *Unsupported media type.*");
     }
 
-    const base64Content = fs.readFileSync(filePath, { encoding: "base64" });
+    const form = new FormData();
+    form.append("file", fs.createReadStream(filePath));
+    form.append("fileName", filename);
+    form.append("publicKey", IMAGEKIT_PUBLIC_KEY);
 
-    const githubApiUrl = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${filename}`;
-
-    await axios.put(
-      githubApiUrl,
-      {
-        message: `upload ${filename}`,
-        content: base64Content,
-        branch: GITHUB_BRANCH
+    const res = await axios.post(IMAGEKIT_URL, form, {
+      headers: form.getHeaders(),
+      auth: {
+        username: IMAGEKIT_PRIVATE_KEY,
+        password: "",
       },
-      {
-        headers: {
-          Authorization: `Bearer ${GITHUB_TOKEN}`,
-          "Content-Type": "application/json",
-          "User-Agent": "Zenox-uploader"
-        }
-      }
-    );
+    });
 
-    await react(message, "✅");
-    await message.reply(`✅ *Success!*\n📂 URL: ${VERCEL_DOMAIN}/${filename}`);
     fs.unlinkSync(filePath);
+    if (res.data?.url) {
+      await react(message, "✅");
+      await message.reply(`✅ *Uploaded!*\n🔗 URL: ${res.data.url}`);
+    } else {
+      await react(message, "❌");
+      await message.reply("❌ *Upload failed.*");
+    }
   } catch (error) {
     console.error("Upload Error:", error.response?.data || error.message);
     await react(message, "❌");
