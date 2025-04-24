@@ -74,10 +74,6 @@
 <a href='https://dashboard.render.com/blueprint/new?repo=https://github.com/Godzenox00/NEZUKO-MD' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-DEPLOY-black?style=for-the-badge&logo=render&logoColor=white'/></a>
 
 
-### ᴅᴇᴘʟᴏʏ ᴛᴏ ʀᴇᴘʟɪᴛ
-
-Try Panel
-Eg. Optiklink, katapumb etc.,
 <details close>
     
 <summary>Read More</summary>
@@ -90,7 +86,9 @@ Eg. Optiklink, katapumb etc.,
     
  Copy the web url and add to the Environment Variables as SERVERURL
    
+### ᴅᴇᴘʟᴏʏ ᴛᴏ ᴩᴀɴᴇʟ
 
+Eg. Optiklink, katapumb etc.,
   </details>
 
 ### sᴜᴘᴘᴏʀᴛ ᴍᴇ
