@@ -14,7 +14,7 @@ command(
 
       const repoName = data.name || "Unknown";
       const repoDesc = data.description || "No description available.";
-      const repoUrl = data.html_url || "https://github.com/Dinkenser12/Nezuko-kamado";
+      const repoUrl = data.html_url || "https://github.com/Godzenox00/NEZUKO-MD";
       const stars = data.stargazers_count || 0;
       const forks = data.forks_count || 0;
 
