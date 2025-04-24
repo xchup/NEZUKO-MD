@@ -9,22 +9,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Dinkenser12/Nezuko-kamado.git"
+    "url": "git+https://github.com/Godzenox00/NEZUKO-MD.git"
   },
   "keywords": [
     "bot",
     "ai",
     "nezuko",
-    "zenitsu",
+    "zenox",
     "whatsapp"
   ],
-  "author": "GOD-ZENITSU",
-  "developer": "ZENITSU",
+  "author": "ZENOX",
+  "developer": "Zenox",
   "license": "GPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/godzenitsu/NEZUKO-BOT/issues"
+    "url": "https://github.com/Godzenox00/NEZUKO-MD/issues"
   },
-  "homepage": "https://github.com/Dinkenser12/Nezuko-kamado#readme",
+  "homepage": "https://github.com/Godzenox00/NEZUKO-MD#readme",
   "dependencies": {
     "@whiskeysockets/baileys": "^6.7.12",
     "@adiwajshing/keyed-db": "^0.2.4",
