@@ -1,5 +1,6 @@
 const { command, isPrivate, tiny, isAdmin, parsedJid, isUrl } = require("../lib");
 const Jimp = require("jimp");
+const config = require("../config");
 
 command(
   {
