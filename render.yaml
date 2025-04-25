@@ -1,9 +1,9 @@
 services:
   - type: web
-    name: NEZUKO-V2
+    name: NEZUKO-MD
     env: node
     branch: main
-    repo: https://github.com/godzenitsu/NEZUKO-V2.git
+    repo: https://github.com/Godzenox00/NEZUKO-MD.git
     buildCommand: npm install
     startCommand: npm start
     plan: free
@@ -12,13 +12,13 @@ services:
       - key: SESSION_ID
         sync: false
       - key: BOT_INFO
-        value: Qᴜᴇᴇɴ-Nᴇᴢᴜᴋᴏ;Gᴏᴅ-Zᴇɴɪᴛꜱᴜ;https://graph.org/file/3879cf1910f65bd8457d7.jpg
+        value: 𝚀𝚞𝚎𝚎𝚗-𝙽𝚎𝚣𝚞𝚔𝚘;𝚉𝚎𝚗𝚘𝚡;https://ik.imagekit.io/Oggy/FgmTXI_3JCrg1fN9.jpg
       - key: ALWAYS_ONLINE
         value: true
       - key: AUTO_STATUS_VIEWS
         value: true
       - key: AUDIO_DATA
-        value: Gᴏᴅ-Zᴇɴɪᴛꜱᴜ;Qᴜᴇᴇɴ-Nᴇᴢᴜᴋᴏ;https://graph.org/file/3879cf1910f65bd8457d7.jpg
+        value: 𝚉𝙴𝙽𝙾𝚇;𝙽𝙴𝚉𝚄𝙺𝙾;https://ik.imagekit.io/Oggy/FgmTXI_3JCrg1fN9.jpg
       - key: PREFIX
         value: ^
       - key: WORK_TYPE
@@ -28,9 +28,9 @@ services:
       - key: CAPTION
         value: 𝐍𝐄𝐙𝐔𝐊𝐎 𝐌𝐃🌈
       - key: STICKER_DATA
-        value: 𝘇𝗲𝗻𝗶𝘁𝘀𝘂;𝗻𝗲𝘇𝘂𝗸𝗼
+        value: Zenox;nezuko
       - key: SUDO
-        value: 917025673121
+        value: 9197441089700
       - key: SERVERURL
         value:
       - key: DATABASE_URL
