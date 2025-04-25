@@ -335,7 +335,7 @@ command(
       await plugin[0].destroy();
       delete require.cache[require.resolve("./" + match + ".js")];
       fs.unlinkSync("./plugins/" + match + ".js");
-      await message.sendMessage(`*_𝙿𝙻𝚄𝙶𝙸𝙽 ${match} 𝙳𝙴𝙻𝙴𝚃𝙴𝙳, 𝚁𝙴𝚂𝚃𝙰𝚁𝚃_*`);
+      await message.sendMessage(`*_Plugin ${match} Deleted, Restart_*`);
     }
   }
 );
