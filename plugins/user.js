@@ -21,7 +21,7 @@ const { PluginDB, installPlugin } = require("../lib/database/plugins");
 
 command(
   {
-    pattern: "ping",
+    pattern: "ping$",
     fromMe: isPrivate,
     desc: "To check ping",
     type: "user",
@@ -55,13 +55,13 @@ command(
       contextInfo: {
         mentionedJid: [message.sender],
         externalAdReply: {
-          title: "QUEEN-NEZUKO",
+          title: "𝚀𝚄𝙴𝙴𝙽-𝙽𝙴𝚉𝚄𝙺𝙾",
           body: "⬇️ 𝙿𝙸𝙽𝙶 𝚁𝙴𝚂𝚄𝙻𝚃",
           mediaType: 1,
           showAdAttribution: true,
           renderLargerThumbnail: false,
-          thumbnailUrl: "https://jerryapi.vercel.app/Fs97Yu.jpg",
-          sourceUrl: "https://github.com/Dinkenser12/Nezuko-kamado"
+          thumbnailUrl: "https://files.catbox.moe/v5y6d8.png",
+          sourceUrl: "https://github.com/Godzenox00/NEZUKO-MD"
         }
       }
     }, { quoted: message }); // <== This makes it a REPLY
@@ -188,7 +188,7 @@ command(
 
 command(
   {
-    pattern: "dlt",
+    pattern: "dlt$",
     fromMe: true,
     desc: "deletes a message",
     type: "user",
