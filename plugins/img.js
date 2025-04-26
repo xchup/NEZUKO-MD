@@ -1,13 +1,8 @@
 const {
   command,
-  webp2mp4,
   isPrivate,
-  AddMp3Meta,
-  getBuffer
 } = require("../lib/");
 const gis = require("g-i-s");
-const X = require("../config");
-const { CAPTION, AUDIO_DATA } = require("../config");
 
 command(
   {
@@ -17,30 +12,50 @@ command(
     type: "downloader",
   },
   async (message, match) => {
-    if (!match) return await message.sendMessage("*_Enter Search Term,number_*");
+    if (!match) {
+      return await message.sendMessage("*_Enter Search Term,number_*");
+    }
+
     let [query, amount] = match.split(",");
-    let result = await gimage(query, amount);
-    await message.sendMessage(
-      `*_Downloading ${amount || 5} images for ${query}_*`
-    );
-    for (let i of result) {
-      await message.sendFromUrl(i);
+    amount = parseInt(amount) || 5;
+
+    try {
+      let result = await gimage(query, amount);
+
+      if (!result || result.length === 0) {
+        return await message.sendMessage(`*_No images found for "${query}"_*`);
+      }
+
+      await message.sendMessage(`*_Downloading ${result.length} images for "${query}"..._*`);
+
+      for (let url of result) {
+        if (!url) continue;
+        try {
+          await message.sendFromUrl(url);
+        } catch (err) {
+          console.error(`Failed to send image from ${url}: ${err.message}`);
+        }
+      }
+    } catch (err) {
+      console.error("Image fetch error:", err.message);
+      await message.sendMessage("*_Error fetching images. Please try again later._*");
     }
   }
 );
 
 async function gimage(query, amount = 5) {
-  let list = [];
   return new Promise((resolve, reject) => {
-    gis(query, async (error, result) => {
-      for (
-        var i = 0;
-        i < (result.length < amount ? result.length : amount);
-        i++
-      ) {
-        list.push(result[i].url);
-        resolve(list);
+    gis(query, (error, results) => {
+      if (error) return reject(error);
+
+      const list = [];
+      for (let i = 0; i < Math.min(results.length, amount); i++) {
+        if (results[i] && results[i].url) {
+          list.push(results[i].url);
+        }
       }
+
+      resolve(list);
     });
   });
-}
+    }
