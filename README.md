@@ -44,8 +44,8 @@
 2. Get DATABASE_URL - Using Cockroach Lab, railway etcc
 
 3. Get [Koyeb api key](https://app.koyeb.com/account/api)
-
-4. Now Deploy
+4. Change bulidpack to dockerfile
+5. Now Deploy
     <br>
 <a href='https://app.koyeb.com/apps/deploy?type=git&repository=https://github.com/Godzenox00/NEZUKO-MD&branch=main&name=nezuko-v2&builder=dockerfile&env[WORK_TYPE]=&env[SUDO]=917907387121,0&env[DATABASE_URL]=&env[SESSION_ID]=' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-DEPLOY-black?style=for-the-badge&logo=koyeb&logoColor=white'/></a>
 
