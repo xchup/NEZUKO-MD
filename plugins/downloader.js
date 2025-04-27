@@ -136,29 +136,35 @@ command({
 
 // Pinterest Command
 command({
-    pattern: "pinterest",
-    fromMe: isPrivate,
-    desc: "Download images and content from Pinterest",
-    type: "downloader",
+  pattern: "pin",
+  fromMe: isPrivate,
+  desc: "Download Pinterest media",
+  type: "downloader",
 }, async (m, text, client) => {
-    try {
-        const url = text || m.quoted?.text;
-        if (!url) {
-            await react(m, "❌");
-            return await m.reply("Please provide a Pinterest URL.");
-        }
-
-        await react(m, "⬇️");
-
-        const result = await getJson(`https://oggy-api.vercel.app/pin?url=${url}`);
-        await m.sendFromUrl(result.data.url, { caption: result.data.created_at });
-
-        await react(m, "✅");
-    } catch (err) {
-        console.error("Pinterest Error:", err);
-        await react(m, "❌");
-        await m.reply("Failed to download content from Pinterest.");
+  try {
+    const url = text || m.quoted?.text;
+    if (!url) {
+      await react(m, "❌");
+      return await m.reply("Please provide a Pinterest URL.");
     }
+
+    await react(m, "⬇️");
+
+    const result = await getJson(`https://oggy-api.vercel.app/down?url=${encodeURIComponent(url)}`);
+
+    if (!result || !result.url) {
+      await react(m, "❌");
+      return await m.reply("Failed to fetch download URL.");
+    }
+
+    await m.sendFromUrl(result.url); // No caption
+
+    await react(m, "✅");
+  } catch (err) {
+    console.error("Pinterest Command Error:", err);
+    await react(m, "❌");
+    await m.reply("Failed to download content from Pinterest.");
+  }
 });
 
 // Facebook Command
