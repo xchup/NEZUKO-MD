@@ -84,7 +84,7 @@
 
 ### 2. To Run Nezuko Bot 24×7
     
- Copy the web url and add to the Environment Variables as SERVERURL
+ Use uptimer 
    
 ### ᴅᴇᴘʟᴏʏ ᴛᴏ ᴩᴀɴᴇʟ
 
