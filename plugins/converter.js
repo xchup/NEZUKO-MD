@@ -13,7 +13,7 @@ const googleTTS = require('google-tts-api');
 const X = require("../config");
 const { CAPTION, AUDIO_DATA } = require("../config");
 const { toPTT } = require("../lib/media");
-const { downloadMediaMessage } = require('@whiskeysockets/baileys');
+const { downloadMediaMessage } = require('baileys');
 const axios = require("axios");
 
 // Custom react function
