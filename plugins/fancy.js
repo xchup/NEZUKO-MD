@@ -3,7 +3,7 @@ const { command, isPrivate, tiny, styletext, listall } = require("../lib/");
 
 command(
   {
-    pattern: "fek",
+    pattern: "fancy",
     fromMe: isPrivate,
     desc: "converts text to fancy text",
     type: "converter",
