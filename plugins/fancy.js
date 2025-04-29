@@ -1,5 +1,5 @@
 const config = require("../config");
-const { command, isPrivate, tiny, styletext, listall } = require("../lib/");
+const { command, isPrivate, tiny, getBuffer, styletext, listall } = require("../lib/");
 
 command(
   {
