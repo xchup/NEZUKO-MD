@@ -89,7 +89,7 @@ async function Zenox() {
     const { connection, lastDisconnect } = s;
 
     if (connection === "connecting") {
-      console.log("nezuko\nVerifying Session...");
+      console.log("nezuko\nVerifying Session from server.js...");
     }
 
     if (connection === "close" && lastDisconnect?.error?.output?.statusCode !== 401) {
@@ -98,7 +98,7 @@ async function Zenox() {
     }
 
     if (connection === "open") {
-      console.log("Nezuko Connected To Whatsapp ✅\nLoading Plugins 🛠️");
+      console.log("Connected To Whatsapp ✅\nLoading Plugins 🛠️");
 
       try {
         let plugins = await PluginDB.findAll();
@@ -129,7 +129,7 @@ async function Zenox() {
       console.log("Plugins Loaded ✅");
 
       const readMore = String.fromCharCode(8206).repeat(4001);
-      const str = `*𝙽𝙴𝚉𝚄𝙺𝙾 𝚂𝚃𝙰𝚁𝚃𝙴𝙳* ${readMore}\n\n\n*𝚅𝙴𝚁𝚂𝙸𝙾𝙽*   : *${require("./package.json").version}* \n*𝙿𝙻𝚄𝙶𝙸𝙽𝚂*  : *${events.commands.length}* \n*𝙼𝙾𝙳𝙴*  : *${config.WORK_TYPE}* \n*𝙷𝙰𝙽𝙳𝙻𝙴𝚁*  : *${config.HANDLERS}*`;
+      const str = `*NEZUKO STARTED* ${readMore}\n\n\n*Version*   : *${require("./package.json").version}* \n*Plugins*  : *${events.commands.length}* \n*Mode*  : *${config.WORK_TYPE}* \n*Handler*  : *${config.HANDLERS}*`;
 
       if (conn.user?.id) {
         conn.sendMessage(conn.user.id, { text: str });
@@ -198,4 +198,4 @@ async function Zenox() {
 
 setTimeout(() => {
   Zenox();
-}, 3000);
+}, 8000);
