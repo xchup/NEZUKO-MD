@@ -57,7 +57,7 @@ async function Zenox() {
         }
       })
       fs.writeFileSync("./lib/session/creds.json", res.data.content);
-      console.log("SESSION CREATED SUCCESSFULLY ✅");
+      console.log("cred file stored✅");
       console.log("Version : " + require("./package.json").version);
     } catch (err) {
       console.error("Failed to fetch session from Hastebin:", err.message);
@@ -89,7 +89,7 @@ async function Zenox() {
     const { connection, lastDisconnect } = s;
 
     if (connection === "connecting") {
-      console.log("nezuko\nVerifying Session...");
+      console.log("nezuko\nVerifying Session from hastebin...");
     }
 
     if (connection === "close" && lastDisconnect?.error?.output?.statusCode !== 401) {
@@ -129,7 +129,7 @@ async function Zenox() {
       console.log("Plugins Loaded ✅");
 
       const readMore = String.fromCharCode(8206).repeat(4001);
-      const str = `*㋚ ɴᴇᴢᴜᴋᴏ ꜱᴛᴀʀᴛᴇᴅ* ${readMore}\n\n\n*⌑ ᴠᴇʀꜱɪᴏɴ*   : *${require("./package.json").version}* \n*⌑ ᴩʟᴜɢɪɴꜱ*  : *${events.commands.length}* \n*⌑ ᴡᴏʀᴋ ᴛʏᴩᴇ*  : *${config.WORK_TYPE}* \n*⌑ ᴩʀᴇꜰɪx*  : *${config.HANDLERS}*`;
+      const str = `*NEZUKO STARTED* ${readMore}\n\n\n*Version*   : *${require("./package.json").version}* \n*Plugins*  : *${events.commands.length}* \n*Mode*  : *${config.WORK_TYPE}* \n*Handlers*  : *${config.HANDLERS}*`;
 
       if (conn.user?.id) {
         conn.sendMessage(conn.user.id, { text: str });
