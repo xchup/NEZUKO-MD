@@ -1,1 +1,201 @@
-function _0x3a87(_0x425b90,_0x367c86){var _0x1ca530=_0x1ca5();return _0x3a87=function(_0x3a87b0,_0x2de36a){_0x3a87b0=_0x3a87b0-0x12b;var _0x3a1051=_0x1ca530[_0x3a87b0];return _0x3a1051;},_0x3a87(_0x425b90,_0x367c86);}function _0x1ca5(){var _0x5b24c1=['length','Zenox','./package.json','./lib/store_db.json','4PHdNlO','./lib/event','./lib/serialize','9eJNLOG','*\x0aPlugins:\x20*','dotenv','./lib/Base','sync','parse','express','photo','Store\x20saved.','commands','./lib/Greetings','Server\x20started\x20on\x20http://localhost:','writeFileSync','517605jHuUyP','1200425UtfhyA','./config','sender','macOS','function','defaultMaxListeners','Zenox\x20Bot\x20is\x20Running','@g.us','204WLPkOi','LOGS','HANDLERS','https://hastebin.com/raw/','stringify','subject','./lib/session/creds.json','data','166978rJvRyr','Reconnecting...','send','config','239636SNcoFZ','Uncaught\x20Exception:','prefix','image','Connected\x20✅','43490FAtyqa','serialize','❌\x20Error:\x20','got','fromMe','400LZPjKa','forEach','text','group-participants.update','pattern','./lib/database/plugins','228933anDNRC','.js','events','9pksrSB','4552520jYrxig','test','3912AemoSL','PORT','*NEZUKO\x20STARTED*\x0a\x0aVersion:\x20*','version','statusCode','*\x0aHandler:\x20*','messages.upsert','50631TGYPYE','PluginDB','connecting','isSelf','push','name','96miEwNG','shift','./plugins','split','10007660TNgaej','error','@whiskeysockets/baileys','close','type','sticker','*\x0aMode:\x20*','silent','connection.update','endsWith','pino','stickerMessage','EventEmitter','uncaughtException','catch','slice','get','charAt','output','url','body','path','2174328xdXXrp','SUDO','./lib/database','Session\x20file\x20retrieved\x20from\x20Hastebin.','notify','DATABASE','findAll','env','\x0aMessage:\x20','\x0aFrom:\x20','log'];_0x1ca5=function(){return _0x5b24c1;};return _0x1ca5();}var _0x9cf18d=_0x3a87;(function(_0x2b9f76,_0x53a7ae){var _0x2c7ef5=_0x3a87,_0x487800=_0x2b9f76();while(!![]){try{var _0x296622=parseInt(_0x2c7ef5(0x191))/0x1+parseInt(_0x2c7ef5(0x17d))/0x2+-parseInt(_0x2c7ef5(0x16c))/0x3+parseInt(_0x2c7ef5(0x181))/0x4+parseInt(_0x2c7ef5(0x18b))/0x5*(parseInt(_0x2c7ef5(0x197))/0x6)+-parseInt(_0x2c7ef5(0x12d))/0x7*(parseInt(_0x2c7ef5(0x133))/0x8)+parseInt(_0x2c7ef5(0x194))/0x9*(-parseInt(_0x2c7ef5(0x186))/0xa);if(_0x296622===_0x53a7ae)break;else _0x487800['push'](_0x487800['shift']());}catch(_0x515b5f){_0x487800['push'](_0x487800['shift']());}}}(_0x1ca5,0x2742b));let _0x1dae2e=_0x1308,{default:makeWASocket,useMultiFileAuthState,Browsers,makeInMemoryStore,delay}=(((()=>{var _0x5c87fe=_0x3a87;for(var _0x108240=_0x1308,_0x1607a0=_0x4fd2();;)try{if(0x6522e==-parseInt(_0x108240(0x199))*(-parseInt(_0x108240(0x191))/0x2)+-parseInt(_0x108240(0x192))/0x3+parseInt(_0x108240(0x1b2))/0x4*(parseInt(_0x108240(0x1ae))/0x5)+-parseInt(_0x108240(0x1b3))/0x6+parseInt(_0x108240(0x1a3))/0x7+parseInt(_0x108240(0x1be))/0x8*(-parseInt(_0x108240(0x1ab))/0x9)+parseInt(_0x108240(0x1e3))/0xa)break;_0x1607a0[_0x5c87fe(0x131)](_0x1607a0['shift']());}catch(_0xb956a1){_0x1607a0[_0x5c87fe(0x131)](_0x1607a0[_0x5c87fe(0x134)]());}})()),require(_0x1dae2e(0x1df))[_0x1dae2e(0x1e0)](),require(_0x1dae2e(0x1bc))),fs=require('fs'),path=require(_0x1dae2e(0x1b7)),pino=require(_0x1dae2e(0x1c1)),express=require(_0x1dae2e(0x19a)),axios=require(_0x1dae2e(0x18c)),got=require(_0x1dae2e(0x19d)),config=require(_0x1dae2e(0x1d0)),PluginDB=require(_0x9cf18d(0x190))[_0x9cf18d(0x12e)],Greetings=require(_0x1dae2e(0x1da)),serialize=require(_0x1dae2e(0x1bd))[_0x9cf18d(0x187)],{Message,Image,Sticker}=require(_0x9cf18d(0x162)),events=require(_0x9cf18d(0x15d)),store=(require(_0x1dae2e(0x1ed))[_0x9cf18d(0x143)][_0x9cf18d(0x172)]=0x1f4,makeInMemoryStore({'logger':pino({'level':_0x9cf18d(0x13e)})})),app=express(),PORT=process[_0x1dae2e(0x1e5)][_0x1dae2e(0x1f2)]||0xbb8;function _0x1308(_0x6b9e39,_0x14a282){let _0x141311=_0x4fd2();return(_0x1308=function(_0x403cea,_0x1bd766){return _0x403cea-=0x18a,_0x141311[_0x403cea];})(_0x6b9e39,_0x14a282);}function _0x4fd2(){var _0x326945=_0x9cf18d;let _0x45dfa5=['At:\x20','Session\x20fetch\x20failed:',_0x326945(0x155),_0x326945(0x151),'bind',_0x326945(0x13d),_0x326945(0x145),'Plugin\x20DB\x20Load\x20Failed:','existsSync',_0x326945(0x16e),_0x326945(0x199),'WORK_TYPE',_0x326945(0x18c),_0x326945(0x16b),'creds.update',_0x326945(0x182),'from',_0x326945(0x15a),_0x326945(0x13b),_0x326945(0x169),_0x326945(0x18e),'Connecting\x20to\x20WhatsApp...',_0x326945(0x138),_0x326945(0x166),_0x326945(0x161),_0x326945(0x180),_0x326945(0x136),_0x326945(0x164),_0x326945(0x137),'includes',_0x326945(0x154),'commands',_0x326945(0x13a),_0x326945(0x17a),_0x326945(0x18f),_0x326945(0x130),'message',_0x326945(0x158),_0x326945(0x193),_0x326945(0x16f),_0x326945(0x132),'imageMessage',_0x326945(0x153),_0x326945(0x198),_0x326945(0x12b),_0x326945(0x18d),'axios','get',_0x326945(0x156),_0x326945(0x12c),'user','7006wMDiOs',_0x326945(0x14d),_0x326945(0x184),'./lib/database/',_0x326945(0x177),'readdirSync',_0x326945(0x17f),_0x326945(0x149),_0x326945(0x175),_0x326945(0x165),'sendMessage',_0x326945(0x160),_0x326945(0x189),'function',_0x326945(0x18a),_0x326945(0x13e),'./plugins/',_0x326945(0x19a),'3275930TFRgyu',_0x326945(0x157),'listen',_0x326945(0x146),_0x326945(0x140),_0x326945(0x15b),_0x326945(0x192),_0x326945(0x173),_0x326945(0x15f),_0x326945(0x14a),'Invalid\x20SESSION_ID',_0x326945(0x16d),_0x326945(0x170),'writeToFile',_0x326945(0x148),_0x326945(0x15c),'4292148nmfJuY',_0x326945(0x174),_0x326945(0x185),_0x326945(0x16a),_0x326945(0x14c),_0x326945(0x183),'trim',_0x326945(0x14e),_0x326945(0x152),_0x326945(0x139),_0x326945(0x15e),_0x326945(0x195),_0x326945(0x135),_0x326945(0x167),_0x326945(0x141),_0x326945(0x179),_0x326945(0x17b),_0x326945(0x14b),_0x326945(0x159),_0x326945(0x142)];return(_0x4fd2=function(){return _0x45dfa5;})();}async function Zenox(){var _0xf83714=_0x9cf18d;let _0x2f41e5=_0x1dae2e,_0x5030ee=_0x2f41e5(0x1c3);if(!fs[_0x2f41e5(0x1cf)](_0x5030ee))try{var _0x229145=config['SESSION_ID']?.[_0x2f41e5(0x1e1)]('~')[0x1];if(!_0x229145)throw new Error(_0x2f41e5(0x1ad));var _0x36197d=await axios[_0xf83714(0x147)](_0xf83714(0x178)+_0x229145);fs[_0x2f41e5(0x1d4)](_0x5030ee,_0x36197d[_0xf83714(0x17c)]),console[_0x2f41e5(0x1a4)](_0xf83714(0x150));}catch(_0x12e8c1){return void console[_0x2f41e5(0x1dd)](_0x2f41e5(0x1c8),_0x12e8c1[_0x2f41e5(0x1eb)]);}await config[_0x2f41e5(0x1bb)][_0xf83714(0x163)]();let {state:_0x4a3a6b,saveCreds:_0x2ff628}=await useMultiFileAuthState('./lib/session'),_0x5e9eb3=makeWASocket({'logger':pino({'level':_0x2f41e5(0x1a0)}),'auth':_0x4a3a6b,'browser':Browsers[_0x2f41e5(0x1af)](_0x2f41e5(0x1c5)),'printQRInTerminal':!0x0,'downloadHistory':!0x1,'syncFullHistory':!0x1});store[_0x2f41e5(0x1cb)](_0x5e9eb3['ev']),setInterval(()=>{var _0x489a51=_0xf83714,_0x3e87b3=_0x2f41e5;store[_0x3e87b3(0x1b0)](_0x3e87b3(0x1a8)),console[_0x489a51(0x157)](_0x3e87b3(0x1c0));},0x1b7740),_0x5e9eb3['ev']['on'](_0xf83714(0x13f),async({connection:_0x595d3c,lastDisconnect:_0x244cbf})=>{var _0x1b44d4=_0xf83714;let _0x5e42b4=_0x2f41e5;if(_0x1b44d4(0x12f)===_0x595d3c&&console[_0x1b44d4(0x157)](_0x5e42b4(0x1dc)),_0x595d3c===_0x5e42b4(0x1e7)&&0x191!==_0x244cbf?.['error']?.[_0x5e42b4(0x198)]?.[_0x1b44d4(0x19b)])return console[_0x5e42b4(0x1a4)](_0x1b44d4(0x17e)),Zenox();if('open'===_0x595d3c){console[_0x5e42b4(0x1a4)](_0x5e42b4(0x1b5));try{var _0x46c965;for({dataValues:_0x46c965}of await PluginDB[_0x5e42b4(0x1f1)]()){var _0x5e6996,_0x2d279e=_0x5e42b4(0x1a1)+_0x46c965[_0x5e42b4(0x1ef)]+'.js';fs[_0x5e42b4(0x1cf)](_0x2d279e)||0xc8===(_0x5e6996=await got(_0x46c965[_0x5e42b4(0x1ac)]))[_0x1b44d4(0x19b)]&&fs[_0x5e42b4(0x1d4)](_0x2d279e,_0x5e6996[_0x5e42b4(0x1c4)]);}}catch(_0x345ab8){console[_0x5e42b4(0x1dd)](_0x5e42b4(0x1ce),_0x345ab8[_0x5e42b4(0x1eb)]);}fs[_0x5e42b4(0x196)](_0x5e42b4(0x1bf))[_0x5e42b4(0x1d3)](_0xb1fd26=>{var _0x3cfbc6=_0x5e42b4;_0xb1fd26[_0x3cfbc6(0x1a7)](_0x3cfbc6(0x1a9))&&require('./plugins/'+_0xb1fd26);}),_0x244cbf=_0x5e42b4(0x1d1)+require(_0x5e42b4(0x1d8))[_0x5e42b4(0x1a2)]+_0x5e42b4(0x19c)+events[_0x1b44d4(0x168)][_0x1b44d4(0x158)]+_0x5e42b4(0x1cc)+config[_0x5e42b4(0x1d2)]+_0x5e42b4(0x18a)+config[_0x5e42b4(0x195)]+'*',(_0x5e9eb3[_0x5e42b4(0x190)]?.['id']&&_0x5e9eb3[_0x5e42b4(0x19b)](_0x5e9eb3[_0x5e42b4(0x190)]['id'],{'text':_0x244cbf}),_0x5e9eb3['ev']['on'](_0x5e42b4(0x1d5),_0x2ff628),_0x5e9eb3['ev']['on'](_0x5e42b4(0x1db),_0x1726c9=>Greetings(_0x1726c9,_0x5e9eb3)),_0x5e9eb3['ev']['on'](_0x5e42b4(0x18f),async({messages:_0x292cfa,type:_0x5ed61f})=>{var _0x324f72=_0x1b44d4,_0x299dcf=_0x5e42b4;if(_0x5ed61f===_0x299dcf(0x1ca)){var _0x6d5436=_0x292cfa[0x0];if(_0x6d5436[_0x299dcf(0x1eb)]){var _0x5298b2,_0x3164c6=await serialize(JSON[_0x299dcf(0x1e2)](JSON[_0x299dcf(0x1c2)](_0x6d5436)),_0x5e9eb3),_0x4ff35b=_0x3164c6[_0x299dcf(0x1c4)]||'';_0x4ff35b&&config[_0x324f72(0x176)]&&(_0x5ed61f=_0x3164c6[_0x299dcf(0x1d7)][_0x299dcf(0x1a7)](_0x299dcf(0x1b4))?(await _0x5e9eb3['groupMetadata'](_0x3164c6[_0x299dcf(0x1d7)]))[_0x299dcf(0x1e8)]:_0x3164c6[_0x299dcf(0x1d7)],console[_0x299dcf(0x1a4)](_0x299dcf(0x1c7)+_0x5ed61f+_0x299dcf(0x18e)+_0x3164c6[_0x299dcf(0x1ee)]+_0x299dcf(0x1c9)+_0x4ff35b));for(_0x5298b2 of events[_0x299dcf(0x1e6)]){if(!_0x3164c6[_0x324f72(0x16f)])return;var _0x26388c,_0x4b0abe=config[_0x299dcf(0x1ba)][_0x299dcf(0x1e1)](',')[_0x299dcf(0x1e4)](_0x3164c6[_0x299dcf(0x1ee)][_0x299dcf(0x1e1)]('@')[0x0]);_0x5298b2[_0x299dcf(0x19f)]&&!_0x4b0abe&&!_0x3164c6[_0x299dcf(0x1ea)]||(_0x4b0abe=new RegExp(config[_0x299dcf(0x195)])[_0x324f72(0x196)](_0x4ff35b)?_0x4ff35b[_0x299dcf(0x1b9)]()[_0x299dcf(0x1b1)](0x0):',',_0x26388c=_0x4ff35b[_0x299dcf(0x1b9)]()[_0x299dcf(0x1e1)](/\s+/)[0x0],_0x3164c6[_0x299dcf(0x1b8)]=_0x4b0abe,_0x5298b2[_0x299dcf(0x1e9)]&&_0x5298b2[_0x299dcf(0x1e9)][_0x324f72(0x196)](_0x26388c)?(_0x4b0abe=_0x4ff35b[_0x299dcf(0x1a6)](_0x26388c[_0x299dcf(0x1ec)])[_0x299dcf(0x1b9)](),_0x26388c=new Message(_0x5e9eb3,_0x3164c6,_0x6d5436),await _0x5298b2[_0x299dcf(0x19e)](_0x26388c,_0x4b0abe,_0x3164c6,_0x5e9eb3)):_0x5298b2['on']===_0x299dcf(0x18b)&&_0x4ff35b?(_0x26388c=new Message(_0x5e9eb3,_0x3164c6,_0x6d5436),await _0x5298b2[_0x324f72(0x171)](_0x26388c,_0x4ff35b,_0x3164c6,_0x5e9eb3)):_0x5298b2['on']!==_0x299dcf(0x193)&&_0x5298b2['on']!==_0x299dcf(0x1de)||_0x3164c6[_0x299dcf(0x1d9)]!==_0x299dcf(0x1f0)?_0x324f72(0x13c)===_0x5298b2['on']&&_0x3164c6[_0x324f72(0x13b)]===_0x299dcf(0x1c6)&&(_0x4b0abe=new Sticker(_0x5e9eb3,_0x3164c6,_0x6d5436),await _0x5298b2[_0x324f72(0x171)](_0x4b0abe,_0x3164c6,_0x5e9eb3)):(_0x26388c=new Image(_0x5e9eb3,_0x3164c6,_0x6d5436),await _0x5298b2[_0x299dcf(0x19e)](_0x26388c,_0x4ff35b,_0x3164c6,_0x5e9eb3)));}}}}));}}),process['on'](_0xf83714(0x144),_0x14af72=>{var _0x50b399=_0xf83714,_0x4ce9ff=_0x2f41e5;console[_0x4ce9ff(0x1dd)](_0x4ce9ff(0x1d6),_0x14af72),_0x5e9eb3[_0x4ce9ff(0x190)]?.['id']&&_0x5e9eb3[_0x4ce9ff(0x19b)](_0x5e9eb3[_0x4ce9ff(0x190)]['id'],{'text':_0x50b399(0x188)+_0x14af72[_0x4ce9ff(0x1eb)]})[_0x4ce9ff(0x1cd)](console[_0x4ce9ff(0x1dd)]);});}app[_0x1dae2e(0x18d)]('/',(_0x10e98e,_0x2e730d)=>_0x2e730d[_0x1dae2e(0x197)](_0x1dae2e(0x1aa))),app[_0x1dae2e(0x1a5)](PORT,()=>console[_0x9cf18d(0x157)](_0x1dae2e(0x1b6)+PORT)),fs[_0x1dae2e(0x196)](_0x9cf18d(0x14f))[_0x1dae2e(0x1d3)](_0x4e1dde=>{var _0x409475=_0x1dae2e;_0x4e1dde['endsWith'](_0x409475(0x1a9))&&require(_0x409475(0x194)+_0x4e1dde);}),setTimeout(()=>Zenox(),0xbb8);
+require("dotenv").config();
+const {
+  default: makeWASocket,
+  useMultiFileAuthState,
+  Browsers,
+  delay,
+  makeInMemoryStore,
+} = require("@whiskeysockets/baileys");
+
+const fs = require("fs");
+const path = require("path");
+const express = require("express");
+const pino = require("pino");
+const axios = require("axios");
+const got = require("got");
+const cheerio = require("cheerio");
+const { serialize } = require("./lib/serialize");
+const { Message, Image, Sticker } = require("./lib/Base");
+const events = require("./lib/event");
+const config = require("./config");
+const { PluginDB } = require("./lib/database/plugins");
+const Greetings = require("./lib/Greetings");
+
+require("events").EventEmitter.defaultMaxListeners = 500;
+
+const store = makeInMemoryStore({ logger: pino({ level: "silent" }) });
+
+fs.readdirSync("./lib/database/").forEach((plugin) => {
+  if (path.extname(plugin).toLowerCase() === ".js") {
+    require("./lib/database/" + plugin);
+  }
+});
+
+const app = express();
+const port = process.env.PORT || 3000;
+const { token } = require("./config");
+
+
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
+});
+
+async function Zenox() {
+  const sessionPath = "./lib/session/creds.json";
+
+  if (!fs.existsSync(sessionPath)) {
+    try {
+      const url = `https://hastebin.com/raw/${config.SESSION_ID.split('~')[1]}`;
+      const token = '50fa5f9415fcb28006c6a7eef079b74c08eff00a26daad06be0d34c4e4ca7057a8493d22981a28634ba825c22f2f9188e14d6a446ecfa0d5d0bc371497224f5f';
+      let res = await axios.get(url, {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      })
+      fs.writeFileSync("./lib/session/creds.json", res.data.content);
+      console.log("Session stored ✅");
+      console.log("Version : " + require("./package.json").version);
+    } catch (err) {
+      console.error("Failed to fetch session from Hastebin:", err.message);
+      return;
+    }
+  }
+
+  await delay(500);
+  console.log("Syncing Database");
+  await config.DATABASE.sync();
+
+  const { state, saveCreds } = await useMultiFileAuthState("./lib/session", pino({ level: "silent" }));
+  const conn = makeWASocket({
+    logger: pino({ level: "silent" }),
+    auth: state,
+    printQRInTerminal: true,
+    browser: Browsers.macOS("Desktop"),
+    downloadHistory: false,
+    syncFullHistory: false,
+  });
+
+  store.bind(conn.ev);
+  setInterval(() => {
+    store.writeToFile("./lib/store_db.json");
+    console.log("saved store");
+  }, 30 * 60 * 1000);
+
+  conn.ev.on("connection.update", async (s) => {
+    const { connection, lastDisconnect } = s;
+
+    if (connection === "connecting") {
+      console.log("nezuko\nVerifying Session...");
+    }
+
+    if (connection === "close" && lastDisconnect?.error?.output?.statusCode !== 401) {
+      console.log(lastDisconnect.error.output);
+      Zenox();
+    }
+
+    if (connection === "open") {
+      console.log("Nezuko Connected To Whatsapp ✅\nLoading Plugins 🛠️");
+
+      try {
+        let plugins = await PluginDB.findAll();
+        for (const plugin of plugins) {
+          const pluginPath = `./plugins/${plugin.dataValues.name}.js`;
+          if (!fs.existsSync(pluginPath)) {
+            try {
+              const response = await got(plugin.dataValues.url);
+              if (response.statusCode === 200) {
+                fs.writeFileSync(pluginPath, response.body);
+                require(pluginPath);
+              }
+            } catch (err) {
+              console.error(`Error fetching plugin ${plugin.dataValues.name}:`, err.message);
+            }
+          }
+        }
+      } catch (e) {
+        console.error("Error loading plugins from DB:", e.message);
+      }
+
+      fs.readdirSync("./plugins").forEach((plugin) => {
+        if (path.extname(plugin).toLowerCase() === ".js") {
+          require("./plugins/" + plugin);
+        }
+      });
+
+      console.log("Plugins Loaded ✅");
+
+      const readMore = String.fromCharCode(8206).repeat(4001);
+      const str = `*𝙽𝙴𝚉𝚄𝙺𝙾 𝚂𝚃𝙰𝚁𝚃𝙴𝙳* ${readMore}\n\n\n*𝚅𝙴𝚁𝚂𝙸𝙾𝙽*   : *${require("./package.json").version}* \n*𝙿𝙻𝚄𝙶𝙸𝙽𝚂*  : *${events.commands.length}* \n*𝙼𝙾𝙳𝙴*  : *${config.WORK_TYPE}* \n*𝙷𝙰𝙽𝙳𝙻𝙴𝚁*  : *${config.HANDLERS}*`;
+
+      if (conn.user?.id) {
+        conn.sendMessage(conn.user.id, { text: str });
+      }
+
+      try {
+        conn.ev.on("creds.update", saveCreds);
+        conn.ev.on("group-participants.update", async (data) => {
+          Greetings(data, conn);
+        });
+
+        conn.ev.on("messages.upsert", async (m) => {
+          if (m.type !== "notify") return;
+          const ms = m.messages[0];
+          const msg = await serialize(JSON.parse(JSON.stringify(ms)), conn);
+          if (!msg.message) return;
+          const text_msg = msg.body;
+
+          if (text_msg && config.LOGS) {
+            console.log(
+              `At : ${msg.from.endsWith("@g.us") ? (await conn.groupMetadata(msg.from)).subject : msg.from}\nFrom : ${msg.sender}\nMessage:${text_msg}`
+            );
+          }
+
+          for (const command of events.commands) {
+            if (command.fromMe && !config.SUDO.split(",").includes(msg.sender.split("@")[0]) && !msg.isSelf)
+              continue;
+
+            let comman;
+            if (text_msg) {
+              comman = text_msg.trim().split(/ +/)[0];
+              msg.prefix = new RegExp(config.HANDLERS).test(text_msg)
+                ? text_msg.split("").shift()
+                : ",";
+            }
+
+            if (command.pattern && command.pattern.test(comman)) {
+              let match = text_msg.replace(new RegExp(comman, "i"), "").trim();
+              const whats = new Message(conn, msg, ms);
+              command.function(whats, match, msg, conn);
+            } else if (text_msg && command.on === "text") {
+              const whats = new Message(conn, msg, ms);
+              command.function(whats, text_msg, msg, conn, m);
+            } else if ((command.on === "image" || command.on === "photo") && msg.type === "imageMessage") {
+              const whats = new Image(conn, msg, ms);
+              command.function(whats, text_msg, msg, conn, m, ms);
+            } else if (command.on === "sticker" && msg.type === "stickerMessage") {
+              const whats = new Sticker(conn, msg, ms);
+              command.function(whats, msg, conn, m, ms);
+            }
+          }
+        });
+      } catch (e) {
+        console.error(e.stack + "\n\n\n\n\n" + JSON.stringify(msg));
+      }
+    }
+  });
+
+  process.on("uncaughtException", async (err) => {
+    console.error("Uncaught Exception:", err);
+    if (conn.user?.id) {
+      await conn.sendMessage(conn.user.id, { text: err.message });
+    }
+  });
+}
+
+setTimeout(() => {
+  Zenox();
+}, 3000);
