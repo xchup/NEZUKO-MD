@@ -107,7 +107,7 @@ command({
     try {
         const query = text || m.quoted?.text;
         if (!query) {
-            await react(m, "💀");
+            await react(m, "⚠️");
             return await m.reply("Please enter a search term or URL.");
         }
 
@@ -136,7 +136,7 @@ command({
 
 // Pinterest Command
 command({
-  pattern: "pin",
+  pattern: "pinterest,
   fromMe: isPrivate,
   desc: "Download Pinterest media",
   type: "downloader",
