@@ -1,4 +1,4 @@
-const plugins = require("../lib/event");
+$const plugins = require("../lib/event");
 const {
   command,
   isPrivate,
@@ -16,7 +16,7 @@ const { PluginDB, installPlugin } = require("../lib/database/plugins");
 
 command(
   {
-    pattern: "menu",
+    pattern: "fmenu",
     fromMe: isPrivate,
     desc: "Show All Commands",
     dontAddCommandList: true,
@@ -60,18 +60,17 @@ Description: ${i.desc}\`\`\``);
           .split(",");
         let usern = message.pushName;
         const readMore = String.fromCharCode(8206).repeat(4001);
-        let menu = `\n╭───〔 ${BOT_INFO.split(";")[0]} 〕──┈⊷
-  ╭────────────────⊷   
-  ┃✯│ 𝙾𝚆𝙽𝙴𝚁: ${BOT_INFO.split(";")[1]}
-  ┃✯│ 𝚄𝚂𝙴𝚁: ${usern}
-  ┃✯│ 𝙳𝙰𝚃𝙴: ${date}
-  ┃✯│ 𝚃𝙸𝙼𝙴: ${time}
-  ┃✯│ 𝙿𝙻𝚄𝙶𝙸𝙽𝚂: ${plugins.commands.length}
-  ┃✯│ 𝙼𝙾𝙳𝙴: ${config.WORK_TYPE}
-  ┃✯│ 𝙷𝙰𝙽𝙳𝙻𝙴𝚁: ${config.HANDLERS}
-  ┃✯│ 𝚅𝙴𝚁𝚂𝙸𝙾𝙽: ${require("../package.json").version}
-  ╰─────────────────⊷  
-‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎‎ ⎙‎ 𝙿𝙻𝚄𝙶𝙸𝙽𝚂 ⎙‎ `;
+        let menu = `\n╭━━━〈 ${BOT_INFO.split(";")[0]} 〉 ━━━┈⊷
+  ╭━━━━━━━━━━━━━━━┈⊷   
+  ┃✪┃ 𝙾𝚆𝙽𝙴𝚁: ${BOT_INFO.split(";")[1]}
+  ┃✪┃ 𝚄𝚂𝙴𝚁: ${usern}
+  ┃✪┃ 𝙳𝙰𝚃𝙴: ${date}
+  ┃✪┃ 𝚃𝙸𝙼𝙴: ${time}
+  ┃✪┃ 𝙿𝙻𝚄𝙶𝙸𝙽𝚂: ${plugins.commands.length}
+  ┃✪┃ 𝙼𝙾𝙳𝙴: ${config.WORK_TYPE}
+  ┃✪┃ 𝙷𝙰𝙽𝙳𝙻𝙴𝚁: ${config.HANDLERS}
+  ┃✪┃ 𝚅𝙴𝚁𝚂𝙸𝙾𝙽: ${require("../package.json").version}
+  ╰━━━━━━━━━━━━━━━━┈⊷`;
 
         let cmnd = [];
         let cmd;
@@ -90,15 +89,15 @@ Description: ${i.desc}\`\`\``);
 
         cmnd.sort();
         category.sort().forEach((cmmd) => {
-          menu += `\n   ╭─────────────┈⊷`;
-          menu += `\n   │ꀆ  *${cmmd.toUpperCase()}* ꀆ`;
-          menu += `\n   ╰─────────────┈⊷`;
-          menu += `\n  ╭─────────────┈⊷`;
+          menu += `\n   ╭━━━━━━━━━━━━━┈⊷`;
+          menu += `\n   ┃⬢  *${cmmd.toUpperCase()}*`;
+          menu += `\n   ╰━━━━━━━━━━━━━┈⊷`;
+          menu += `\n  ╭━━━━━━━━━━━━━┈⊷`;
           let comad = cmnd.filter(({ type }) => type == cmmd);
           comad.forEach(({ cmd }) => {
-            menu += `\n  ││   ${cmd.trim()}`;
+            menu += `\n  │✧│   ${cmd.trim()}`;
           });
-          menu += `\n  ╰─────────────┈⊷`;
+          menu += `\n  ╰━━━━━━━━━━━━━┈⊷`;
         });
 
         menu += `\n© 𝚀𝚄𝙴𝙴𝙽-𝙽𝙴𝚉𝚄𝙺𝙾`;
