@@ -1,4 +1,4 @@
-$const plugins = require("../lib/event");
+const plugins = require("../lib/event");
 const {
   command,
   isPrivate,
@@ -16,7 +16,7 @@ const { PluginDB, installPlugin } = require("../lib/database/plugins");
 
 command(
   {
-    pattern: "fmenu",
+    pattern: "menu",
     fromMe: isPrivate,
     desc: "Show All Commands",
     dontAddCommandList: true,
