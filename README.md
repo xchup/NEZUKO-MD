@@ -46,7 +46,8 @@
 3. Get [Koyeb api key](https://app.koyeb.com/account/api)
 4. Login first to deploy ⚠️
 5. Now Deploy
-6. Change Buildpack to dockerfile if default is bulidpack in builder section.
+NB : Change Buildpack to dockerfile if default is bulidpack in builder section.
+
     <br>
 <a href='https://app.koyeb.com/services/deploy?name=NEZUKO&type=git&repository=Godzenox00/NEZUKO-MD&branch=main&builder=dockerfile&env[AUDIO_DATA]=%F0%9D%9A%89%F0%9D%99%B4%F0%9D%99%BD%F0%9D%99%BE%F0%9D%9A%87;%F0%9D%99%BD%F0%9D%99%B4%F0%9D%9A%89%F0%9D%9A%84%F0%9D%99%BA%F0%9D%99%BE;https://ik.imagekit.io/Oggy/dj5H3B_hsPDjAD2y.jpg&env[BOT_INFO]=NEZUKO;ZENOX;https://ik.imagekit.io/Oggy/dj5H3B_hsPDjAD2y.jpg&env[WORK,_TYPE]=public&env[KOYEB_API_KEY]=&env[KOYEB_APP_NAME]=NEZUKO&env[ANTILINK]=false&env[SUDO]=919744108970,0&env[PORT]=8000&env[PREFIX]=-&env[DATABASE_URL]=&env[SESSION_ID]=&env[STICKER_DATA]=NEZUKO,ZENOX&env[SUDO]=&ports=3000;http;/' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-DEPLOY-black?style=for-the-badge&logo=koyeb&logoColor=white'/></a>
 
