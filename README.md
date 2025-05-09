@@ -69,13 +69,15 @@ NB : Change Buildpack to dockerfile if default is bulidpack in builder section.
     <br>
 <a href='https://dashboard.render.com/register' target="_blank"><img alt='render' src='https://img.shields.io/badge/-Create-black?style=for-the-badge&logo=render&logoColor=white'/></a>
 
-3. Get DATABASE_URL - Using Cockroach Lab, railway etcc
+2. 𝘎𝘦𝘵 𝘚𝘦𝘴𝘴𝘪𝘰𝘯 𝘪𝘥
 
-2. 𝘕𝘰𝘸 𝘋𝘦𝘱𝘭𝘰𝘺
+3. 𝘊𝘳𝘦𝘢𝘵𝘦 𝘴𝘦𝘳𝘷𝘪𝘤𝘦
     <br>
-<a href='https://dashboard.render.com/blueprint/new?repo=https://github.com/Godzenox00/NEZUKO-MD' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-DEPLOY-black?style=for-the-badge&logo=render&logoColor=white'/></a>
+<a href='https://dashboard.render.com/web/new' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-DEPLOY-black?style=for-the-badge&logo=render&logoColor=white'/></a>
 
-
+4. 𝘈𝘥𝘥 𝘴𝘦𝘴𝘴𝘪𝘰𝘯 𝘪𝘥 𝘪𝘯 𝘦𝘯𝘷𝘪𝘳𝘰𝘯𝘮𝘦𝘯𝘵 𝘷𝘢𝘳 [ SESSION_ID ]
+5. 𝘈𝘧𝘵𝘦𝘳 𝘥𝘦𝘱𝘭𝘰𝘺 𝘣𝘰𝘵 𝘸𝘪𝘭𝘭 𝘸𝘰𝘬𝘪𝘯𝘨 𝘧𝘪𝘯𝘦
+6. 𝘛𝘶𝘳𝘯 𝘖𝘧𝘧 𝘢𝘶𝘵𝘰 𝘥𝘦𝘱𝘭𝘰𝘺
 <details close>
     
 <summary>Read More</summary>
@@ -87,13 +89,10 @@ NB : Change Buildpack to dockerfile if default is bulidpack in builder section.
 ### 2. To Run Nezuko Bot 24×7
     
  Use uptimer 
- 𝗡𝗢𝗧𝗘 : 𝗧𝘂𝗿𝗻 𝗼𝗳𝗳 𝗮𝘂𝘁𝗼𝗱𝗲𝗽𝗹𝗼𝘆 𝗼𝘁𝗵𝗲𝗿𝘄𝗶𝘀𝗲 𝘆𝗼𝘂 𝘄𝗶𝗹𝗹 𝗴𝗲𝘁 𝘀𝗽𝗮𝗺 𝗲𝗿𝗿𝗼𝗿.
+ https://uptimerobot.com/
+
+Create a moniter.
    
-### ᴅᴇᴘʟᴏʏ ᴛᴏ ᴩᴀɴᴇʟ
-
-Eg. Optiklink, katapumb etc.,
-  </details>
-
 ### sᴜᴘᴘᴏʀᴛ ᴍᴇ
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.buymeacoffee.com/safeershafo">
