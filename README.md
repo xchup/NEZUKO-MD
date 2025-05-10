@@ -82,7 +82,7 @@ NB : Change Buildpack to dockerfile if default is bulidpack in builder section.
     
 <summary>Read More</summary>
 
-### 1. Customise Bot
+### 1. Customise Bot 
 
  Go to Environment Variables and edit and use
 
@@ -92,6 +92,11 @@ NB : Change Buildpack to dockerfile if default is bulidpack in builder section.
  https://uptimerobot.com/
 
 Create a moniter.
+
+## New method also you can check ↙️
+# bot-host.net 
+
+This method is under development, soon we will announce... stay tooned🫱🏻‍🫲🏼
    
 ### sᴜᴘᴘᴏʀᴛ ᴍᴇ
 
